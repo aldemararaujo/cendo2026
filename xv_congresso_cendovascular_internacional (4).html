@@ -1,0 +1,849 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>XV Congresso cENDOVASCULAR Internacional</title>
+  
+  <!-- Configurações PWA e Metadados para Dispositivos Móveis -->
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#0d9488">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="cENDOVASCULAR">
+  <link rel="apple-touch-icon" href="icon-192.png">
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Google Fonts: Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+          },
+          colors: {
+            brand: {
+              navy: '#0c2340',
+              blue: '#1d4ed8',
+              teal: '#0d9488',
+              red: '#dc2626',
+              gold: '#d97706',
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    .glass-nav {
+      background: rgba(15, 23, 42, 0.9);
+      backdrop-filter: blur(12px);
+    }
+    .glass-card {
+      background: rgba(255, 255, 255, 0.04);
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    * {
+      transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+    }
+    ::-webkit-scrollbar {
+      width: 6px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #0f172a;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #334155;
+      border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #475569;
+    }
+  </style>
+</head>
+<body class="bg-slate-900 text-slate-100 antialiased font-sans selection:bg-brand-teal selection:text-white">
+
+  <header class="fixed top-0 left-0 w-full z-50 transition-all duration-300 glass-nav border-b border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <!-- Vascular Pulsing SVG Logo -->
+        <svg class="w-8 h-8 sm:w-10 sm:h-10 text-brand-red animate-pulse flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
+        </svg>
+        <div>
+          <span class="text-[9px] sm:text-xs font-bold tracking-widest text-brand-teal block uppercase">XV CONGRESSO</span>
+          <span class="text-sm sm:text-lg font-black tracking-tight text-white block leading-none">cENDOVASCULAR <span class="text-brand-red">Internacional</span></span>
+        </div>
+      </div>
+
+      <!-- Menu Desktop -->
+      <nav class="hidden lg:flex items-center gap-6 xl:gap-8">
+        <a href="#inicio" class="text-xs xl:text-sm font-semibold text-slate-300 hover:text-white transition-colors">Início</a>
+        <a href="#sobre" class="text-xs xl:text-sm font-semibold text-slate-300 hover:text-white transition-colors">Sobre</a>
+        <a href="#programacao" class="text-xs xl:text-sm font-semibold text-slate-300 hover:text-white transition-colors">Programação</a>
+        <a href="#temas-livres" class="text-xs xl:text-sm font-semibold text-slate-300 hover:text-white transition-colors">Temas Livres</a>
+        <a href="#palestrantes" class="text-xs xl:text-sm font-semibold text-slate-300 hover:text-white transition-colors">Palestrantes</a>
+      </nav>
+
+      <!-- Botão de Inscrição Oficial -->
+      <div class="flex items-center gap-2 sm:gap-4">
+        <a href="https://e3eventos.com/cendovascular" target="_blank" class="bg-gradient-to-r from-brand-teal to-teal-500 hover:from-teal-500 hover:to-brand-teal text-white px-4 sm:px-5 py-2 sm:py-2.5 rounded-full text-xs sm:text-sm font-bold shadow-lg shadow-teal-950 transition-all flex items-center gap-2">
+          Inscreva-se
+          <svg class="w-4 h-4 hidden sm:block" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+        </a>
+        <!-- Alternar Menu Mobile -->
+        <button onclick="toggleMobileMenu()" class="lg:hidden text-slate-300 hover:text-white focus:outline-none p-1" aria-label="Menu principal">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Dropdown Menu Mobile -->
+    <div id="mobile-menu" class="hidden lg:hidden bg-slate-950 border-t border-slate-800 px-4 py-4 space-y-2">
+      <a href="#inicio" onclick="toggleMobileMenu()" class="block text-slate-300 hover:text-white text-sm font-semibold py-2">Início</a>
+      <a href="#sobre" onclick="toggleMobileMenu()" class="block text-slate-300 hover:text-white text-sm font-semibold py-2">Sobre</a>
+      <a href="#programacao" onclick="toggleMobileMenu()" class="block text-slate-300 hover:text-white text-sm font-semibold py-2">Programação</a>
+      <a href="#temas-livres" onclick="toggleMobileMenu()" class="block text-slate-300 hover:text-white text-sm font-semibold py-2">Temas Livres</a>
+      <a href="#palestrantes" onclick="toggleMobileMenu()" class="block text-slate-300 hover:text-white text-sm font-semibold py-2">Palestrantes</a>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="inicio" class="relative pt-28 pb-16 md:pt-40 md:pb-36 overflow-hidden bg-gradient-to-b from-slate-950 to-slate-900">
+    <div class="absolute inset-0 z-0 opacity-15 pointer-events-none">
+      <div class="absolute top-10 left-10 w-72 h-72 sm:w-96 sm:h-96 rounded-full bg-brand-red filter blur-[80px] sm:blur-[120px]"></div>
+      <div class="absolute bottom-10 right-10 w-72 h-72 sm:w-96 sm:h-96 rounded-full bg-brand-teal filter blur-[80px] sm:blur-[120px]"></div>
+    </div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+      <!-- Mensagens Iniciais -->
+      <div class="lg:col-span-7 text-center lg:text-left">
+        <div class="inline-flex items-center gap-2 bg-slate-800,60 border border-slate-700 px-3 py-1 sm:px-4 sm:py-1.5 rounded-full mb-4 sm:mb-6 text-[10px] sm:text-xs font-semibold text-brand-teal tracking-wide">
+          <span class="w-2 h-2 rounded-full bg-brand-red animate-ping"></span>
+          Inscrições Abertas Online
+        </div>
+        
+        <h1 class="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white mb-4 sm:mb-6 leading-tight">
+          Tratar o Edema <br class="hidden sm:inline">
+          <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-teal via-teal-400 to-brand-red">Reduz a Ferida</span>
+        </h1>
+        
+        <p class="text-slate-400 text-sm sm:text-base lg:text-lg max-w-2xl mx-auto lg:mx-0 mb-6 sm:mb-8 leading-relaxed">
+          O maior encontro internacional sobre técnicas endovasculares inovadoras, reabilitação linfática e tratamento avançado de feridas complexas. Venha celebrar conosco a inovação e o aprendizado científico de ponta.
+        </p>
+
+        <!-- Detalhes do Evento -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 max-w-lg mx-auto lg:mx-0 mb-6 sm:mb-8 text-left">
+          <div class="flex items-center gap-3 bg-slate-800,40 p-3 rounded-xl border border-slate-800">
+            <div class="bg-brand-teal,10 p-2 rounded-lg text-brand-teal flex-shrink-0">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+            </div>
+            <div>
+              <span class="text-[10px] text-slate-500 block">Período de Realização</span>
+              <span class="text-xs sm:text-sm font-bold text-brand-teal block">Sexta-feira e Sábado</span>
+              <span class="text-[11px] text-slate-300 block">31 de Julho e 01 de Agosto de 2026</span>
+            </div>
+          </div>
+          <div class="flex items-center gap-3 bg-slate-800,40 p-3 rounded-xl border border-slate-800">
+            <div class="bg-brand-red,10 p-2 rounded-lg text-brand-red flex-shrink-0">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+            </div>
+            <div>
+              <span class="text-[10px] text-slate-500 block">Local Presencial</span>
+              <span class="text-xs sm:text-sm font-semibold text-slate-200">Auditório Emil Burihan</span>
+              <span class="text-[11px] text-slate-400 block">UNCISAL, Maceió, AL</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center lg:justify-start">
+          <a href="#programacao" class="bg-slate-800 hover:bg-slate-700 text-white px-6 sm:px-8 py-3 rounded-full text-xs sm:text-sm font-bold border border-slate-700 hover:border-slate-600 transition-all text-center">
+            Ver Programação Completa
+          </a>
+          <a href="https://bit.ly/cendo2026" target="_blank" class="bg-brand-teal,10 hover:bg-brand-teal,20 text-brand-teal border border-brand-teal,30 px-6 sm:px-8 py-3 rounded-full text-xs sm:text-sm font-bold transition-all text-center flex items-center justify-center gap-2">
+            Submeter Trabalho
+          </a>
+        </div>
+      </div>
+
+      <!-- Destaques e Selo Comemorativo -->
+      <div class="lg:col-span-5 relative mt-6 lg:mt-0">
+        <div class="bg-slate-800,60 backdrop-blur-xl border border-slate-700 rounded-3xl p-5 sm:p-8 shadow-2xl relative">
+          <!-- Selo Comemorativo -->
+          <div class="absolute -top-5 right-4 sm:-right-4 bg-amber-500 text-slate-950 font-black px-3 py-2 sm:px-4 sm:py-2.5 rounded-2xl shadow-xl transform rotate-3 text-center z-20">
+            <span class="text-[9px] sm:text-xs block tracking-widest uppercase">CELEBRAÇÃO</span>
+            <span class="text-sm sm:text-base">25 Anos PG</span>
+            <span class="text-[8px] sm:text-[9px] block font-semibold text-slate-850">UNCISAL, UNIFESP e UFRGS</span>
+          </div>
+
+          <h3 class="text-lg sm:text-xl font-bold text-white mb-4 border-b border-slate-700 pb-3 flex items-center gap-2">
+            <span class="w-3 h-3 rounded-full bg-brand-teal flex-shrink-0"></span>
+            Destaques Importantes
+          </h3>
+          <ul class="space-y-3 text-xs sm:text-sm">
+            <li class="flex gap-2">
+              <span class="text-brand-teal flex-shrink-0">✔</span>
+              <p class="text-slate-300"><strong class="text-white">IV Encontro Multidisciplinar do CESMAC</strong> promovendo integração acadêmica.</p>
+            </li>
+            <li class="flex gap-2">
+              <span class="text-brand-teal flex-shrink-0">✔</span>
+              <p class="text-slate-300"><strong class="text-white">IX Encontro de Enfermagem</strong> abordando os cuidados humanizados.</p>
+            </li>
+            <li class="flex gap-2">
+              <span class="text-brand-teal flex-shrink-0">✔</span>
+              <p class="text-slate-300"><strong class="text-white">Homenagens de Peso:</strong> Medalha Prof. Fausto Miranda Jr. e homenagem ao Prof. Henrique Jorge Guedes Neto.</p>
+            </li>
+          </ul>
+
+          <div class="mt-5 p-3 sm:p-4 bg-slate-900,80 border border-slate-800 rounded-xl flex items-center gap-3 sm:gap-4">
+            <div class="bg-slate-850 px-2 py-3 rounded-lg text-amber-500 font-extrabold text-center leading-none min-w-[50px]">
+              <span class="block text-xl sm:text-2xl">4</span>
+              <span class="text-[8px] sm:text-[9px] uppercase tracking-wider block mt-1">Eixos</span>
+            </div>
+            <div>
+              <p class="text-[10px] sm:text-xs text-slate-400">Temas livres em</p>
+              <p class="text-xs sm:text-sm font-bold text-white leading-tight">Artigos, Relatos, Experiências e Startups de Biotecnologia</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Secao Sobre -->
+  <section id="sobre" class="py-16 sm:py-20 bg-slate-900 border-t border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
+        <h2 class="text-xs sm:text-sm font-bold text-brand-teal uppercase tracking-widest mb-2">INTEGRAÇÃO ACADÊMICA</h2>
+        <p class="text-2xl sm:text-4xl font-extrabold text-white leading-tight">Ciência Aplicada ao Bem-Estar</p>
+        <div class="w-16 h-1 bg-brand-red mx-auto mt-3 sm:mt-4 rounded-full"></div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 mb-12 sm:mb-16">
+        <!-- Card 1 -->
+        <div class="bg-slate-850 p-6 sm:p-8 rounded-2xl border border-slate-800 hover:border-slate-700 transition-all shadow-xl flex flex-col justify-between">
+          <div>
+            <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-brand-teal,10 flex items-center justify-center text-brand-teal mb-4 sm:mb-6 flex-shrink-0">
+              <svg class="w-5 h-5 sm:w-6 sm:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path></svg>
+            </div>
+            <h3 class="text-lg sm:text-xl font-bold text-white mb-2 sm:mb-3">Fecha Feridas</h3>
+            <p class="text-slate-400 text-xs sm:text-sm leading-relaxed mb-4">
+              Referência à Casa Fecha Feridas "Prof. Isaac Soares de Lima" - UNCISAL e ao Instituto Fecha Feridas "Dr. Jackson Silveira Caiafa". Espaços de excelência no tratamento clínico e reabilitação.
+            </p>
+          </div>
+          <span class="text-[10px] text-brand-teal font-semibold tracking-wider uppercase">Cuidado Resolutivo</span>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="bg-slate-850 p-6 sm:p-8 rounded-2xl border border-slate-800 hover:border-slate-700 transition-all shadow-xl flex flex-col justify-between">
+          <div>
+            <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-brand-red,10 flex items-center justify-center text-brand-red mb-4 sm:mb-6 flex-shrink-0">
+              <svg class="w-5 h-5 sm:w-6 sm:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
+            </div>
+            <h3 class="text-lg sm:text-xl font-bold text-white mb-2 sm:mb-3">Biotecnologia</h3>
+            <p class="text-slate-400 text-xs sm:text-sm leading-relaxed mb-4">
+              Apoio do Programa de Pós-Graduação em Biotecnologia da Saúde Humana e Animal (PPGBiotec) do CESMAC, integrando pesquisa inovadora e soluções de mercado.
+            </p>
+          </div>
+          <span class="text-[10px] text-brand-red font-semibold tracking-wider uppercase">Foco Científico</span>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="bg-slate-850 p-6 sm:p-8 rounded-2xl border border-slate-800 hover:border-slate-700 transition-all shadow-xl flex flex-col justify-between">
+          <div>
+            <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-amber-500,10 flex items-center justify-center text-amber-500 mb-4 sm:mb-6 flex-shrink-0">
+              <svg class="w-5 h-5 sm:w-6 sm:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222"></path></svg>
+            </div>
+            <h3 class="text-lg sm:text-xl font-bold text-white mb-2 sm:mb-3">Ligas Acadêmicas</h3>
+            <p class="text-slate-400 text-xs sm:text-sm leading-relaxed mb-4">
+              Atuação direta da Liga Acadêmica Vascular (LAVA) da UNCISAL "Prof. Emil Burihan" e da Liga Acadêmica de Angiorradiologia (LANGIO) do CESMAC.
+            </p>
+          </div>
+          <span class="text-[10px] text-amber-500 font-semibold tracking-wider uppercase">Foco Estudantil</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Cronograma Interativo -->
+  <section id="programacao" class="py-16 sm:py-20 bg-slate-950 relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Filtros e Pesquisas do Cronograma -->
+      <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-10 sm:mb-12">
+        <div>
+          <h2 class="text-xs sm:text-sm font-bold text-brand-teal uppercase tracking-widest mb-2">CRONOGRAMA CIENTÍFICO</h2>
+          <p class="text-2xl sm:text-4xl font-extrabold text-white">Programação do Congresso</p>
+          <div class="w-16 h-1 bg-brand-red mt-3 sm:mt-4 rounded-full"></div>
+        </div>
+        
+        <div class="flex flex-col sm:flex-row gap-3 sm:gap-4 w-full lg:w-auto">
+          <!-- Campo de Busca -->
+          <div class="relative w-full sm:w-64 flex-shrink-0">
+            <input type="text" id="schedule-search" oninput="filterSchedule()" placeholder="Buscar palestra, autor..." class="w-full bg-slate-900 border border-slate-800 rounded-full px-5 py-2.5 text-xs sm:text-sm text-slate-200 placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-brand-teal focus:border-transparent">
+            <span class="absolute right-4 top-3 text-slate-500">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+            </span>
+          </div>
+          <!-- Dias de Exibicao -->
+          <div class="bg-slate-900 border border-slate-800 rounded-full p-1 flex w-full sm:w-auto overflow-x-auto">
+            <button id="btn-day1" onclick="switchDay(1)" class="whitespace-nowrap px-4 sm:px-6 py-2 rounded-full text-xs sm:text-sm font-bold transition-all bg-brand-teal text-white w-1/2 sm:w-auto">
+              Sexta (31 de Julho)
+            </button>
+            <button id="btn-day2" onclick="switchDay(2)" class="whitespace-nowrap px-4 sm:px-6 py-2 rounded-full text-xs sm:text-sm font-bold transition-all text-slate-400 hover:text-white w-1/2 sm:w-auto">
+              Sábado (01 de Agosto)
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Container da Linha do Tempo -->
+      <div class="relative">
+        <!-- Linha Guia (Apenas Desktop) -->
+        <div class="absolute left-0 sm:left-24 top-0 bottom-0 w-0.5 bg-slate-800 hidden sm:block"></div>
+
+        <!-- Itens Renderizados -->
+        <div id="schedule-container" class="space-y-4 sm:space-y-6"></div>
+
+        <div id="no-results-msg" class="hidden text-center py-12">
+          <svg class="w-10 h-10 sm:w-12 sm:h-12 text-slate-600 mx-auto mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+          <p class="text-xs sm:text-sm text-slate-400">Nenhum evento corresponde à busca informada.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Temas Livres -->
+  <section id="temas-livres" class="py-16 sm:py-20 bg-slate-900 border-t border-slate-800 relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
+        <h2 class="text-xs sm:text-sm font-bold text-brand-teal uppercase tracking-widest mb-2">PRODUÇÃO CIENTÍFICA</h2>
+        <p class="text-2xl sm:text-4xl font-extrabold text-white">4 Categorias de Temas Livres</p>
+        <p class="text-slate-400 text-xs sm:text-sm mt-2">Envie sua pesquisa científica para avaliação de nossa banca de especialistas renomados.</p>
+        <div class="w-16 h-1 bg-brand-red mx-auto mt-3 sm:mt-4 rounded-full"></div>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mb-10 sm:mb-12">
+        <!-- Categoria 1 -->
+        <div class="bg-slate-850 border border-slate-800 p-5 sm:p-6 rounded-2xl relative overflow-hidden group hover:border-brand-teal transition-all flex flex-col justify-between">
+          <div>
+            <div class="text-2xl sm:text-3xl font-black text-brand-teal mb-3 sm:mb-4 group-hover:scale-105 transition-transform">01</div>
+            <h4 class="text-base sm:text-lg font-bold text-white mb-2">Artigo Original</h4>
+            <p class="text-[11px] sm:text-xs text-slate-400 leading-relaxed mb-4">Investigações completas de natureza empírica, clínica ou acadêmica correlatas à reabilitação vascular.</p>
+          </div>
+          <span class="text-[9px] font-bold text-brand-teal tracking-wider uppercase">Mais Frequente</span>
+        </div>
+
+        <!-- Categoria 2 -->
+        <div class="bg-slate-850 border border-slate-800 p-5 sm:p-6 rounded-2xl relative overflow-hidden group hover:border-brand-teal transition-all flex flex-col justify-between">
+          <div>
+            <div class="text-2xl sm:text-3xl font-black text-brand-red mb-3 sm:mb-4 group-hover:scale-105 transition-transform">02</div>
+            <h4 class="text-base sm:text-lg font-bold text-white mb-2">Relato de Caso</h4>
+            <p class="text-[11px] sm:text-xs text-slate-400 leading-relaxed mb-4">Apresentações documentadas de casos raros ou condutas de alta complexidade em pé diabético.</p>
+          </div>
+          <span class="text-[9px] font-bold text-brand-red tracking-wider uppercase">Foco Prático</span>
+        </div>
+
+        <!-- Categoria 3 -->
+        <div class="bg-slate-850 border border-slate-800 p-5 sm:p-6 rounded-2xl relative overflow-hidden group hover:border-brand-teal transition-all flex flex-col justify-between">
+          <div>
+            <div class="text-2xl sm:text-3xl font-black text-amber-500 mb-3 sm:mb-4 group-hover:scale-105 transition-transform">03</div>
+            <h4 class="text-base sm:text-lg font-bold text-white mb-2">Relato de Experiência</h4>
+            <p class="text-[11px] sm:text-xs text-slate-400 leading-relaxed mb-4">Compartilhamento de vivências práticas inovadoras no cuidado em saúde e dinâmica de equipes.</p>
+          </div>
+          <span class="text-[9px] font-bold text-amber-500 tracking-wider uppercase">Educacional</span>
+        </div>
+
+        <!-- Categoria 4 -->
+        <div class="bg-slate-850 border border-slate-800 p-5 sm:p-6 rounded-2xl relative overflow-hidden group hover:border-brand-teal transition-all flex flex-col justify-between">
+          <div>
+            <div class="text-2xl sm:text-3xl font-black text-emerald-500 mb-3 sm:mb-4 group-hover:scale-105 transition-transform">04</div>
+            <h4 class="text-base sm:text-lg font-bold text-white mb-2">Startup ou Ideação</h4>
+            <p class="text-[11px] sm:text-xs text-slate-400 leading-relaxed mb-4">Modelos de novos negócios, biotecnologias inovadoras ou aplicativos de triagem e mapeamento de edemas.</p>
+          </div>
+          <span class="text-[9px] font-bold text-emerald-500 tracking-wider uppercase">Inovação Pura</span>
+        </div>
+      </div>
+
+      <!-- Chamada para Envio -->
+      <div class="bg-gradient-to-r from-slate-950 via-slate-900 to-slate-950 border border-slate-800 rounded-3xl p-6 sm:p-8 flex flex-col md:flex-row items-center justify-between gap-6">
+        <div class="text-center md:text-left">
+          <span class="text-[10px] font-bold text-brand-teal uppercase tracking-widest block mb-1">PRODUÇÃO ACADÊMICA</span>
+          <h3 class="text-lg sm:text-xl font-bold text-white mb-1">Envie o resumo do seu trabalho</h3>
+          <p class="text-[11px] sm:text-xs text-slate-400">Verifique os prazos e garanta que sua formatação esteja em conformidade com o edital do evento.</p>
+        </div>
+        <div class="flex-shrink-0 w-full md:w-auto">
+          <a href="https://bit.ly/cendo2026" target="_blank" class="block text-center bg-brand-teal hover:bg-teal-500 text-white px-6 py-3 rounded-full text-xs sm:text-sm font-bold transition-all shadow-lg shadow-teal-950/40 w-full md:w-auto">
+            Submeter Trabalho
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Palestrantes -->
+  <section id="palestrantes" class="py-16 sm:py-20 bg-slate-950">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Filtros de Palestrantes -->
+      <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-10 sm:mb-12">
+        <div>
+          <h2 class="text-xs sm:text-sm font-bold text-brand-teal uppercase tracking-widest mb-2">PRESENÇAS CONFIRMADAS</h2>
+          <p class="text-2xl sm:text-4xl font-extrabold text-white">Palestrantes e Convidados</p>
+          <div class="w-16 h-1 bg-brand-red mt-3 sm:mt-4 rounded-full"></div>
+        </div>
+        
+        <div class="flex flex-col sm:flex-row gap-3 sm:gap-4 w-full lg:w-auto">
+          <div class="relative w-full sm:w-64">
+            <input type="text" id="speaker-search" oninput="filterSpeakers()" placeholder="Filtrar por nome ou estado..." class="w-full bg-slate-900 border border-slate-800 rounded-full px-5 py-2.5 text-xs sm:text-sm text-slate-200 placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-brand-teal focus:border-transparent">
+            <span class="absolute right-4 top-3 text-slate-500">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+            </span>
+          </div>
+          <div class="bg-slate-900 border border-slate-800 rounded-full p-1 flex w-full sm:w-auto overflow-x-auto">
+            <button id="speaker-filter-all" onclick="filterSpeakerCategory('all')" class="whitespace-nowrap px-4 sm:px-5 py-2 rounded-full text-[11px] sm:text-xs font-bold transition-all bg-brand-teal text-white flex-1 sm:flex-initial">Todos</button>
+            <button id="speaker-filter-nat" onclick="filterSpeakerCategory('nacional')" class="whitespace-nowrap px-4 sm:px-5 py-2 rounded-full text-[11px] sm:text-xs font-bold transition-all text-slate-400 hover:text-white flex-1 sm:flex-initial">Nacionais</button>
+            <button id="speaker-filter-int" onclick="filterSpeakerCategory('internacional')" class="whitespace-nowrap px-4 sm:px-5 py-2 rounded-full text-[11px] sm:text-xs font-bold transition-all text-slate-400 hover:text-white flex-1 sm:flex-initial">Internacionais</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Grade de Palestrantes -->
+      <div id="speakers-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6"></div>
+
+      <div id="no-speakers-msg" class="hidden text-center py-12">
+        <svg class="w-10 h-10 sm:w-12 sm:h-12 text-slate-600 mx-auto mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+        <p class="text-xs sm:text-sm text-slate-400">Nenhum palestrante corresponde à busca informada.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Secao de Localizacao -->
+  <section class="py-16 sm:py-20 bg-slate-900 border-t border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+      <div>
+        <h2 class="text-xs sm:text-sm font-bold text-brand-teal uppercase tracking-widest mb-2">COMO CHEGAR</h2>
+        <p class="text-2xl sm:text-4xl font-extrabold text-white">Localização e Detalhes</p>
+        <div class="w-16 h-1 bg-brand-red mt-3 mb-6 rounded-full"></div>
+        <p class="text-slate-400 text-xs sm:text-sm leading-relaxed mb-6">
+          O congresso será realizado no prestigiado <strong class="text-white">Auditório Emil Burihan - UNCISAL</strong>, localizado em Maceió - AL, oferecendo excelente infraestrutura, conforto e suporte tecnológico completo para as apresentações acadêmicas.
+        </p>
+
+        <!-- Detalhes de Local -->
+        <div class="space-y-4 mb-6 sm:mb-8 text-xs sm:text-sm">
+          <div class="flex items-start gap-3">
+            <span class="text-brand-teal mt-0.5">📌</span>
+            <div>
+              <p class="font-bold text-white">Endereço Principal</p>
+              <p class="text-slate-400">Universidade Estadual de Ciências da Saúde de Alagoas (UNCISAL)</p>
+              <p class="text-slate-400">Prado, Maceió, AL, CEP 57010-300</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-3">
+            <span class="text-brand-teal mt-0.5">🍴</span>
+            <div>
+              <p class="font-bold text-white">Jantar de Confraternização</p>
+              <p class="text-slate-400">Restaurante Maria Antonieta</p>
+              <p class="text-slate-400">Bairro Jatiúca, Maceió, AL (Agendado para 31-07-2026 às 20:00)</p>
+            </div>
+          </div>
+        </div>
+
+        <a href="https://maps.app.goo.gl/jbx2RwNKRxh3fy6S8" target="_blank" class="inline-flex bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 px-5 py-3 rounded-full text-xs font-bold transition-all items-center gap-2 w-full sm:w-auto justify-center">
+          Abrir no Google Maps
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+        </a>
+      </div>
+
+      <!-- Mapa Visual -->
+      <a href="https://maps.app.goo.gl/jbx2RwNKRxh3fy6S8" target="_blank" class="block relative bg-slate-950 border border-slate-800 rounded-3xl p-6 sm:p-8 overflow-hidden h-72 sm:h-96 flex flex-col justify-between hover:border-brand-teal transition-all group">
+        <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#38bdf8_1px,transparent_1px)] [background-size:16px_16px]"></div>
+        
+        <div class="relative z-10 w-full h-full flex flex-col items-center justify-center text-center p-4">
+          <div class="bg-slate-900 border border-slate-750 p-4 rounded-full text-brand-red animate-bounce mb-4 group-hover:scale-105 transition-transform">
+            <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"></path></svg>
+          </div>
+          <h4 class="text-base sm:text-lg font-bold text-white mb-1">Auditório Emil Burihan</h4>
+          <p class="text-xs text-slate-400 max-w-xs leading-relaxed">No térreo da UNCISAL, Maceió, AL.</p>
+          <span class="text-[9px] mt-4 uppercase text-brand-teal font-extrabold tracking-widest bg-teal-950/40 px-3 py-1 rounded-full border border-brand-teal/20">Clique para ver rotas</span>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <!-- Rodape -->
+  <footer class="bg-slate-950 border-t border-slate-800 text-slate-400 py-10 sm:py-12 text-xs sm:text-sm">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+        <div>
+          <span class="text-[10px] font-bold tracking-widest text-brand-teal block uppercase mb-1">XV CONGRESSO</span>
+          <span class="text-base sm:text-lg font-black tracking-tight text-white block">cENDOVASCULAR</span>
+          <p class="text-xs text-slate-500 mt-3 leading-relaxed">Defendendo a importância do lema "Tratar o Edema Reduz a Ferida" e fomentando a capacitação em saúde.</p>
+        </div>
+        <div>
+          <h4 class="text-sm font-bold text-white mb-4">Parcerias e Apoio</h4>
+          <ul class="space-y-1.5 text-xs">
+            <li>UNCISAL - Maceió</li>
+            <li>CESMAC - Centro Universitário</li>
+            <li>PPGBiotec - Alagoas</li>
+            <li>Liga Acadêmica Vascular (LAVA)</li>
+            <li>Liga Acadêmica de Angiorradiologia (LANGIO)</li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-sm font-bold text-white mb-4">Secretaria Organizadora</h4>
+          <p class="text-xs text-slate-500 mb-2 leading-relaxed">COMUNIC Eventos Científicos</p>
+          <a href="https://comuniceventos.com.br" target="_blank" class="text-xs text-brand-teal hover:underline block mb-1">www.comuniceventos.com.br</a>
+          <a href="https://cendovascular.com.br" target="_blank" class="text-xs text-brand-teal hover:underline block">www.cendovascular.com.br</a>
+        </div>
+        <div>
+          <h4 class="text-sm font-bold text-white mb-4">Avisos</h4>
+          <ul class="space-y-1.5 text-xs text-slate-500">
+            <li>• Certificados expedidos eletronicamente em até 10 dias após o evento.</li>
+            <li>• Sessões gravadas e disponibilizadas para os congressistas.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="border-t border-slate-900 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-[10px] sm:text-xs">
+        <p class="text-center sm:text-left">&copy; 2026 XV Congresso cENDOVASCULAR Internacional. Desenvolvido com foco ético e científico.</p>
+        <p class="text-slate-600">Maceió, Alagoas, Brasil</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Lógica de Controle do Aplicativo -->
+  <script>
+    let currentDay = 1;
+    let scheduleSearchQuery = "";
+    let speakerSearchQuery = "";
+    let speakerCategory = "all";
+
+    // Registro opcional do Service Worker para suporte PWA offline
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('sw.js').then(registration => {
+          console.log('PWA Service Worker registrado com sucesso');
+        }).catch(error => {
+          console.log('Falha ao registrar o Service Worker do PWA:', error);
+        });
+      });
+    }
+
+    // Lista de palestrantes cientificos
+    const speakers = [
+      { name: "Prof. Dr. Rui Manoel Lopes Nunes", loc: "Portugal", isInt: true, role: "Palestrante Internacional - Tema: TCLE na Pesquisa Científica" },
+      { name: "Adamastor Humberto Pereira", loc: "RS", isInt: false, role: "Palestrante e Homenageado" },
+      { name: "Fausto Miranda Jr.", loc: "SP", isInt: false, role: "Homenageado e Moderador" },
+      { name: "Henrique Jorge Guedes Neto", loc: "SP", isInt: false, role: "Homenageado Especial - Tema: Linfedema e Lipedema" },
+      { name: "Jackson Silveira Caiafa", loc: "RR, RJ", isInt: false, role: "In Memoriam - IA" },
+      { name: "Diego Alvarez Naranjo", loc: "PR", isInt: false, role: "Palestrante - Tema: ACP Derme" },
+      { name: "Hudson Fernandes", loc: "SP", isInt: false, role: "Palestrante - Terapia Hiperbárica" },
+      { name: "João Gabriel", loc: "BA", isInt: false, role: "Palestrante - Edema das Feridas" },
+      { name: "José Ferreira Nunes", loc: "CE", isInt: false, role: "Convidado Especial" },
+      { name: "Marcelo Araujo", loc: "BA", isInt: false, role: "Comissão Científica e Organizadora" },
+      { name: "Aldemar Araujo Castro", loc: "AL", isInt: false, role: "Comissão Científica e Organizadora" },
+      { name: "Guilherme Pitta", loc: "AL", isInt: false, role: "Comissão Organizadora" },
+      { name: "Matheus Bittencourt", loc: "AL", isInt: false, role: "Comissão Organizadora" },
+      { name: "Filipe Amorim Braga", loc: "AL", isInt: false, role: "Comissão Organizadora" },
+      { name: "Raquel Teixeira Celestino", loc: "AL", isInt: false, role: "Comissão Organizadora" },
+      { name: "Ariádine Barbosa", loc: "AL", isInt: false, role: "Convidada Especial" },
+      { name: "Cristiane Mello", loc: "CE", isInt: false, role: "Convidada Especial" },
+      { name: "Elvya Calheiros", loc: "AL", isInt: false, role: "Palestrante - Bota de Unna" },
+      { name: "Rosa Patrícia Omena", loc: "AL", isInt: false, role: "Palestrante - Bota de Unna com Melaleuca" },
+      { name: "Sauri Chaves", loc: "Cuba", isInt: true, role: "Palestrante Convidado" }
+    ];
+
+    // Cronograma dinâmico de palestras
+    const schedule = [
+      // SEXTA-FEIRA
+      {
+        day: 1,
+        time: "08:00",
+        title: "Sessão de Temas Livres I",
+        desc: "Apresentação e avaliação dos temas científicos sob comissão examinadora.",
+        hosts: "Comissão de avaliação: Aldemar Araujo e Marcelo Araujo"
+      },
+      {
+        day: 1,
+        time: "09:00",
+        title: "CONFERÊNCIA MAGISTRAL I: TCLE na Pesquisa",
+        desc: "Análise profunda sobre Termo de Consentimento Livre e Esclarecido na inovação biomédica.",
+        hosts: "Presidente: Rosa Maria Gomes (AL) | Palestrante Internacional: Prof. Rui Manoel Lopes Nunes (Portugal)"
+      },
+      {
+        day: 1,
+        time: "10:00",
+        title: "CONFERÊNCIA MAGISTRAL II: Evolução Histórica do Tratamento de Aorta Abdominal",
+        desc: "História e transformações dos tratamentos cirúrgicos convencionais aos tratamentos endovasculares modernos.",
+        hosts: "Presidente: Marcelo Araujo (BA) | Palestrante: Prof. Adamastor Humberto Pereira (RS)"
+      },
+      {
+        day: 1,
+        time: "10:30",
+        title: "Mesa Redonda: Egressos do Convênio Escolas de Ciências Médicas e Doutorado RENORBIO",
+        desc: "Debates rápidos (3 minutos e 3 slides) sobre as melhorias na qualidade de vida trazidas pelas pesquisas.",
+        hosts: "Moderadores: Adamastor Humberto Pereira (RS) e Fausto Miranda Jr. (SP)"
+      },
+      {
+        day: 1,
+        time: "12:10",
+        title: "Intervalo para Almoço",
+        desc: "Período livre de confraternização acadêmica.",
+        hosts: "Almoço não incluído na inscrição"
+      },
+      {
+        day: 1,
+        time: "14:00",
+        title: "Mesa Redonda: Inovação em Diagnóstico e Tratamento das Varizes",
+        desc: "Estudos de US Doppler colorido, fleboestética, laser endovenoso, tratamento de edema e escleroterapia avançada.",
+        hosts: "Moderadores: Marcelo Araujo (BA) e Anderson Garílio (MG)"
+      },
+      {
+        day: 1,
+        time: "15:30",
+        title: "Conferência: Tratando o Linfedema e Lipedema",
+        desc: "Lições e estratégias clínicas práticas adquiridas ao longo de décadas de tratamento.",
+        hosts: "Palestrante: Henrique Jorge Guedes Neto (SP) | Moderador: Anderson Gariglio (MG)"
+      },
+      {
+        day: 1,
+        time: "16:00",
+        title: "Palestra: Startup Vascular One - Rastreando as Feridas",
+        desc: "Plataformas tecnológicas avançadas auxiliando no mapeamento e tratamento de feridas.",
+        hosts: "Moderador: Hugo Tenório (AL) | Palestrantes: Aldemar Araujo (AL) e Matheus Bittencourt (AL)"
+      },
+      {
+        day: 1,
+        time: "16:00",
+        title: "Mesa Redonda: Capacitando o Serviço de Atendimento Domiciliar (SAD)",
+        desc: "Abordagem multiprofissional sobre nutrição cicatricial, manejo de úlceras e edemas no acamado.",
+        hosts: "Moderadores: Sioneide da Silva (AL) e Igor Emmanuel (AL)"
+      },
+      {
+        day: 1,
+        time: "16:45",
+        title: "Mesa Redonda: Relatos de Experiências Exitosas nas Úlceras Varicosas",
+        desc: "Casos de sucesso com Bota de Unna com Melaleuca, ACP Derme e triagem de atenção básica.",
+        hosts: "Moderadores: Anderson Gariglio (MG) e Renata Ribeiro (AL)"
+      },
+      {
+        day: 1,
+        time: "17:30",
+        title: "Sessão de Temas Livres II",
+        desc: "Apresentações científicas de ensaios e relatos em andamento nas universidades parceiras.",
+        hosts: "Comissão de avaliação: Aldemar Araujo e Marcelo Araujo"
+      },
+      {
+        day: 1,
+        time: "20:00",
+        title: "Jantar de Confraternização - Restaurante Maria Antonieta",
+        desc: "Homenagens especiais e entrega do Prêmio Prof. Fausto Miranda Jr. e Geneci Moura de Sá.",
+        hosts: "Homenageados: Henrique Jorge Guedes Neto, Fausto Miranda Jr., Adamastor Humberto Pereira e José Aderval Aragão"
+      },
+
+      // SÁBADO
+      {
+        day: 2,
+        time: "08:00",
+        title: "Mesa Redonda: Simplificando o Atendimento na Casa Fecha Feridas (cFF)",
+        desc: "Estruturação clínica e de reabilitação com Membracel, Terapia Física e Técnica Godoy.",
+        hosts: "Moderadoras: Iana Sampaio (AL) e Itajaciara Barbosa (AL)"
+      },
+      {
+        day: 2,
+        time: "09:30",
+        title: "Lançamento do Estudo Multicêntrico de Aspirado de Medula no Tratamento de Feridas",
+        desc: "Novo protocolo prospectivo multicêntrico revolucionando o manejo de feridas complexas.",
+        hosts: "Palestrante: Marcelo Calil Burihan (SP) | Moderador: Aldemar Araujo Castro (AL)"
+      },
+      {
+        day: 2,
+        time: "10:00",
+        title: "Mesa Redonda: Atendimento de Pacientes com Pé Diabético em Alagoas",
+        desc: "Estatísticas de peregrinação, geolocalização dos pacientes e discussões éticas com conselheiros e juízes federais.",
+        hosts: "Debatedores: Emmanuel Forte (CFM), Antônio José (TRF5), Maurício Pitta (MP-AL), Ricardo Melro e convidados"
+      },
+      {
+        day: 2,
+        time: "10:30",
+        title: "Palestra: Avanços na Terapia Hiperbárica no Pé Diabético",
+        desc: "Controle de infecções sistêmicas graves e salvamento de membros utilizando oxigenação.",
+        hosts: "Palestrante: Hudson Fernandes (SP) | Moderadora: Renata Ribeiro (AL)"
+      },
+      {
+        day: 2,
+        time: "11:00",
+        title: "Sessão de Temas Livres III (Grande Premiação)",
+        desc: "Apresentação competitiva dos melhores trabalhos científicos disputando o prêmio principal do congresso.",
+        hosts: "Comissão de avaliação: Aldemar Araujo e Marcelo Araujo"
+      },
+      {
+        day: 2,
+        time: "13:00",
+        title: "Cerimônia de Encerramento",
+        desc: "Encerramento formal do congresso, premiação e agradecimentos aos patrocinadores e comissão científica.",
+        hosts: "Comissão Organizadora"
+      }
+    ];
+
+    function toggleMobileMenu() {
+      const menu = document.getElementById("mobile-menu");
+      menu.classList.toggle("hidden");
+    }
+
+    function switchDay(day) {
+      currentDay = day;
+      
+      const d1Btn = document.getElementById("btn-day1");
+      const d2Btn = document.getElementById("btn-day2");
+
+      if (day === 1) {
+        d1Btn.className = "whitespace-nowrap px-4 sm:px-6 py-2 rounded-full text-xs sm:text-sm font-bold transition-all bg-brand-teal text-white w-1/2 sm:w-auto";
+        d2Btn.className = "whitespace-nowrap px-4 sm:px-6 py-2 rounded-full text-xs sm:text-sm font-bold transition-all text-slate-400 hover:text-white w-1/2 sm:w-auto";
+      } else {
+        d2Btn.className = "whitespace-nowrap px-4 sm:px-6 py-2 rounded-full text-xs sm:text-sm font-bold transition-all bg-brand-teal text-white w-1/2 sm:w-auto";
+        d1Btn.className = "whitespace-nowrap px-4 sm:px-6 py-2 rounded-full text-xs sm:text-sm font-bold transition-all text-slate-400 hover:text-white w-1/2 sm:w-auto";
+      }
+
+      renderSchedule();
+    }
+
+    function renderSchedule() {
+      const container = document.getElementById("schedule-container");
+      const noResults = document.getElementById("no-results-msg");
+      container.innerHTML = "";
+
+      const filtered = schedule.filter(item => {
+        const matchesDay = item.day === currentDay;
+        const matchesSearch = item.title.toLowerCase().includes(scheduleSearchQuery.toLowerCase()) || 
+                              item.desc.toLowerCase().includes(scheduleSearchQuery.toLowerCase()) ||
+                              item.hosts.toLowerCase().includes(scheduleSearchQuery.toLowerCase());
+        return matchesDay && matchesSearch;
+      });
+
+      if (filtered.length === 0) {
+        noResults.classList.remove("hidden");
+      } else {
+        noResults.classList.add("hidden");
+        filtered.forEach(item => {
+          const card = document.createElement("div");
+          card.className = "relative pl-0 sm:pl-28 transition-all duration-300 hover:scale-[1.01]";
+          
+          card.innerHTML = `
+            <!-- Indicação Horária (Apenas Desktop) -->
+            <div class="hidden sm:flex absolute left-0 top-1 w-20 justify-end pr-4 text-xs sm:text-sm font-black tracking-wider text-brand-teal">${item.time}</div>
+            
+            <div class="bg-slate-900 border border-slate-800 p-5 sm:p-6 rounded-2xl relative shadow-lg hover:border-slate-700 transition-colors">
+              <!-- Indicação Horária (Apenas Mobile) -->
+              <span class="sm:hidden inline-block bg-slate-800 text-brand-teal px-3 py-1 rounded-full text-[10px] font-extrabold mb-3">${item.time}</span>
+              
+              <h4 class="text-sm sm:text-base lg:text-lg font-bold text-white mb-2">${item.title}</h4>
+              <p class="text-xs sm:text-sm text-slate-400 leading-relaxed mb-4">${item.desc}</p>
+              
+              <div class="border-t border-slate-850 pt-3 flex flex-col sm:flex-row sm:items-center justify-between gap-3 text-xs">
+                <span class="text-slate-500 font-semibold italic flex items-center gap-1.5">
+                  <span class="w-1.5 h-1.5 rounded-full bg-slate-600 flex-shrink-0"></span>
+                  ${item.hosts}
+                </span>
+                <span class="text-[9px] bg-slate-950 px-2.5 py-1 rounded-md text-slate-400 uppercase tracking-widest font-black self-start sm:self-auto">Científico</span>
+              </div>
+            </div>
+          `;
+          container.appendChild(card);
+        });
+      }
+    }
+
+    function filterSchedule() {
+      scheduleSearchQuery = document.getElementById("schedule-search").value;
+      renderSchedule();
+    }
+
+    function renderSpeakers() {
+      const container = document.getElementById("speakers-grid");
+      const noResults = document.getElementById("no-speakers-msg");
+      container.innerHTML = "";
+
+      const filtered = speakers.filter(sp => {
+        const matchesCategory = speakerCategory === "all" || 
+                                (speakerCategory === "nacional" && !sp.isInt) || 
+                                (speakerCategory === "internacional" && sp.isInt);
+        
+        const matchesSearch = sp.name.toLowerCase().includes(speakerSearchQuery.toLowerCase()) || 
+                              sp.loc.toLowerCase().includes(speakerSearchQuery.toLowerCase());
+
+        return matchesCategory && matchesSearch;
+      });
+
+      if (filtered.length === 0) {
+        noResults.classList.remove("hidden");
+      } else {
+        noResults.classList.add("hidden");
+        filtered.forEach(sp => {
+          const card = document.createElement("div");
+          card.className = "bg-slate-900 border border-slate-800 hover:border-slate-700 p-4 sm:p-5 rounded-2xl shadow-xl hover:scale-[1.02] transition-all flex flex-col justify-between";
+          
+          card.innerHTML = `
+            <div>
+              <div class="flex items-center justify-between mb-4">
+                <span class="text-[9px] sm:text-[10px] font-black tracking-widest uppercase ${sp.isInt ? 'text-amber-500 bg-amber-500/10' : 'text-brand-teal bg-teal-500/10'} px-2 py-0.5 rounded">
+                  ${sp.isInt ? 'Internacional' : 'Nacional'}
+                </span>
+                <span class="text-[9px] sm:text-[10px] text-slate-500 font-bold tracking-tight">${sp.loc}</span>
+              </div>
+              <h4 class="text-xs sm:text-sm font-bold text-white mb-2 leading-tight">${sp.name}</h4>
+              <p class="text-[11px] sm:text-xs text-slate-400 leading-normal">${sp.role}</p>
+            </div>
+            
+            <div class="mt-4 pt-3 border-t border-slate-850 flex items-center justify-between text-[10px]">
+              <span class="text-slate-500">Confirmado</span>
+              <span class="text-brand-teal text-xs">●</span>
+            </div>
+          `;
+          container.appendChild(card);
+        });
+      }
+    }
+
+    function filterSpeakers() {
+      speakerSearchQuery = document.getElementById("speaker-search").value;
+      renderSpeakers();
+    }
+
+    function filterSpeakerCategory(cat) {
+      speakerCategory = cat;
+
+      const btns = {
+        all: document.getElementById("speaker-filter-all"),
+        nacional: document.getElementById("speaker-filter-nat"),
+        internacional: document.getElementById("speaker-filter-int")
+      };
+
+      Object.keys(btns).forEach(key => {
+        if (key === cat) {
+          btns[key].className = "whitespace-nowrap px-4 sm:px-5 py-2 rounded-full text-[11px] sm:text-xs font-bold transition-all bg-brand-teal text-white flex-1 sm:flex-initial";
+        } else {
+          btns[key].className = "whitespace-nowrap px-4 sm:px-5 py-2 rounded-full text-[11px] sm:text-xs font-bold transition-all text-slate-400 hover:text-white flex-1 sm:flex-initial";
+        }
+      });
+
+      renderSpeakers();
+    }
+  </script>
+</body>
+</html>
+```
+`\n`
