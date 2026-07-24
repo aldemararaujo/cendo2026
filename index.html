@@ -1,9 +1,10 @@
 <!DOCTYPE html>
-<html lang="pt-BR" class="scroll-smooth">
-<head>
+<html lang="pt-BR" class="scroll-smooth"><head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>XV Congresso cENDOVASCULAR Internacional</title>
+  <meta name="version" content="1.1">
+  <meta name="last-modified" content="2026-07-23">
   
   <!-- Configurações PWA e Metadados para Dispositivos Móveis -->
   <link rel="manifest" href="manifest.json">
@@ -18,8 +19,8 @@
   
   <!-- Google Fonts: Inter -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet">
 
   <script>
     tailwind.config = {
@@ -518,8 +519,8 @@
         </div>
       </div>
       <div class="border-t border-slate-900 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-[10px] sm:text-xs">
-        <p class="text-center sm:text-left">&copy; 2026 XV Congresso cENDOVASCULAR Internacional. Desenvolvido com foco ético e científico.</p>
-        <p class="text-slate-600">Maceió, Alagoas, Brasil</p>
+        <p class="text-center sm:text-left">© 2026 XV Congresso cENDOVASCULAR Internacional. Desenvolvido com foco ético e científico.</p>
+        <p class="text-slate-600">Versão 1.1 — 23/07/2026 · Maceió, Alagoas, Brasil</p>
       </div>
     </div>
   </footer>
@@ -542,160 +543,264 @@
       });
     }
 
-    // Lista de palestrantes cientificos
+    // Relação oficial de convidados e comissões — versão 1.1, 23/07/2026.
     const speakers = [
-      { name: "Prof. Dr. Rui Manoel Lopes Nunes", loc: "Portugal", isInt: true, role: "Palestrante Internacional - Tema: TCLE na Pesquisa Científica" },
-      { name: "Adamastor Humberto Pereira", loc: "RS", isInt: false, role: "Palestrante e Homenageado" },
-      { name: "Fausto Miranda Jr.", loc: "SP", isInt: false, role: "Homenageado e Moderador" },
-      { name: "Henrique Jorge Guedes Neto", loc: "SP", isInt: false, role: "Homenageado Especial - Tema: Linfedema e Lipedema" },
-      { name: "Jackson Silveira Caiafa", loc: "RR, RJ", isInt: false, role: "In Memoriam - IA" },
-      { name: "Diego Alvarez Naranjo", loc: "PR", isInt: false, role: "Palestrante - Tema: ACP Derme" },
-      { name: "Hudson Fernandes", loc: "SP", isInt: false, role: "Palestrante - Terapia Hiperbárica" },
-      { name: "João Gabriel", loc: "BA", isInt: false, role: "Palestrante - Edema das Feridas" },
-      { name: "José Ferreira Nunes", loc: "CE", isInt: false, role: "Convidado Especial" },
-      { name: "Marcelo Araujo", loc: "BA", isInt: false, role: "Comissão Científica e Organizadora" },
-      { name: "Aldemar Araujo Castro", loc: "AL", isInt: false, role: "Comissão Científica e Organizadora" },
-      { name: "Guilherme Pitta", loc: "AL", isInt: false, role: "Comissão Organizadora" },
-      { name: "Matheus Bittencourt", loc: "AL", isInt: false, role: "Comissão Organizadora" },
-      { name: "Filipe Amorim Braga", loc: "AL", isInt: false, role: "Comissão Organizadora" },
-      { name: "Raquel Teixeira Celestino", loc: "AL", isInt: false, role: "Comissão Organizadora" },
-      { name: "Ariádine Barbosa", loc: "AL", isInt: false, role: "Convidada Especial" },
-      { name: "Cristiane Mello", loc: "CE", isInt: false, role: "Convidada Especial" },
-      { name: "Elvya Calheiros", loc: "AL", isInt: false, role: "Palestrante - Bota de Unna" },
-      { name: "Rosa Patrícia Omena", loc: "AL", isInt: false, role: "Palestrante - Bota de Unna com Melaleuca" },
-      { name: "Sauri Chaves", loc: "Cuba", isInt: true, role: "Palestrante Convidado" }
+      { name: "Prof. Rui Manoel Lopes Nunes", loc: "Portugal", isInt: true, role: "Convidado internacional e palestrante da Conferência Magistral I: TCLE na Pesquisa" },
+      { name: "Adamastor Humberto Pereira", loc: "RS", isInt: false, role: "Convidado nacional, palestrante, moderador e homenageado" },
+      { name: "Ariadine Barbosa", loc: "AL", isInt: false, role: "Convidada nacional" },
+      { name: "Cristiane Mello", loc: "CE", isInt: false, role: "Convidada nacional" },
+      { name: "Fausto Miranda Jr.", loc: "SP", isInt: false, role: "Convidado nacional, moderador e homenageado com medalha" },
+      { name: "Diego Alvarez Naranjo", loc: "PR", isInt: false, role: "Convidado nacional e palestrante sobre ACP Derme" },
+      { name: "Elvya Calheiros", loc: "AL", isInt: false, role: "Convidada nacional e palestrante sobre Bota de Unna" },
+      { name: "Jackson Silveira Caiafa", loc: "RR/RJ", isInt: false, role: "Homenagem in memoriam — Instituto Fecha Feridas" },
+      { name: "Hudson Fernandes", loc: "SP", isInt: false, role: "Convidado nacional e palestrante sobre terapia hiperbárica" },
+      { name: "João Gabriel", loc: "BA", isInt: false, role: "Convidado nacional e palestrante sobre edema das feridas" },
+      { name: "Jorge Henrique Guedes Neto", loc: "SP", isInt: false, role: "Homenageado especial; a programação também registra o nome como Henrique Jorge Guedes Neto" },
+      { name: "José Ferreira Nunes", loc: "CE", isInt: false, role: "Convidado nacional" },
+      { name: "Marcelo Araujo", loc: "BA", isInt: false, role: "Convidado nacional; comissões científica e organizadora" },
+      { name: "Rosa Patrícia Omena", loc: "AL", isInt: false, role: "Convidada nacional e palestrante sobre Bota de Unna com Melaleuca" },
+      { name: "Sauri Chaves", loc: "Cuba", isInt: true, role: "Convidado internacional" },
+      { name: "Aldemar Araujo Castro", loc: "AL", isInt: false, role: "Comissões científica e organizadora" },
+      { name: "Filipe Amorim Braga", loc: "AL", isInt: false, role: "Comissão organizadora e palestrante" },
+      { name: "Guilherme Pitta", loc: "AL", isInt: false, role: "Comissão organizadora e palestrante" },
+      { name: "Matheus Bittencourt", loc: "AL", isInt: false, role: "Comissão organizadora e palestrante" },
+      { name: "Raquel Teixeira Celestino", loc: "AL", isInt: false, role: "Comissões científica e organizadora" }
     ];
 
-    // Cronograma dinâmico de palestras
+    // Programação oficial completa — versão 1.1, 23/07/2026.
     const schedule = [
-      // SEXTA-FEIRA
       {
         day: 1,
         time: "08:00",
         title: "Sessão de Temas Livres I",
-        desc: "Apresentação e avaliação dos temas científicos sob comissão examinadora.",
-        hosts: "Comissão de avaliação: Aldemar Araujo e Marcelo Araujo"
+        desc: "Abertura das apresentações científicas.",
+        hosts: "Comissão de avaliação: Aldemar Araujo e Marcelo Araujo",
+        details: []
       },
       {
         day: 1,
         time: "09:00",
-        title: "CONFERÊNCIA MAGISTRAL I: TCLE na Pesquisa",
-        desc: "Análise profunda sobre Termo de Consentimento Livre e Esclarecido na inovação biomédica.",
-        hosts: "Presidente: Rosa Maria Gomes (AL) | Palestrante Internacional: Prof. Rui Manoel Lopes Nunes (Portugal)"
+        title: "Conferência Magistral I — TCLE na Pesquisa",
+        desc: "Conferência sobre o Termo de Consentimento Livre e Esclarecido na pesquisa científica.",
+        hosts: "Presidente: Rosa Maria Gomes (AL) | Palestrante internacional: Prof. Rui Manoel Lopes Nunes (Portugal)",
+        details: []
       },
       {
         day: 1,
         time: "10:00",
-        title: "CONFERÊNCIA MAGISTRAL II: Evolução Histórica do Tratamento de Aorta Abdominal",
-        desc: "História e transformações dos tratamentos cirúrgicos convencionais aos tratamentos endovasculares modernos.",
-        hosts: "Presidente: Marcelo Araujo (BA) | Palestrante: Prof. Adamastor Humberto Pereira (RS)"
+        title: "Conferência Magistral II — Evolução histórica do tratamento do aneurisma da aorta abdominal",
+        desc: "Evolução do tratamento do aneurisma da aorta abdominal.",
+        hosts: "Presidente: Marcelo Araujo (BA) | Palestrante: Prof. Adamastor Humberto Pereira (RS)",
+        details: []
       },
       {
         day: 1,
         time: "10:30",
-        title: "Mesa Redonda: Egressos do Convênio Escolas de Ciências Médicas e Doutorado RENORBIO",
-        desc: "Debates rápidos (3 minutos e 3 slides) sobre as melhorias na qualidade de vida trazidas pelas pesquisas.",
-        hosts: "Moderadores: Adamastor Humberto Pereira (RS) e Fausto Miranda Jr. (SP)"
+        title: "Mesa Redonda — Egressos ECMAL/UNCISAL, EPM/UNIFESP, UFRGS e Doutorado RENORBIO",
+        desc: "Mesa de 1h40. Cada participante apresentará, em 3 minutos e 3 slides, a principal contribuição de sua formação e pesquisa para a qualidade de vida da população.",
+        hosts: "Moderadores: Adamastor Humberto Pereira (RS) e Fausto Miranda Jr. (SP)",
+        details: [
+          "Julio Pierin Siqueira (PR) — 3 min",
+          "Raquel Teixeira Celestino (AL) — 3 min",
+          "José Aderval Aragão (SE/UFSE) — 3 min",
+          "José Olímpio Maia (PE/UPE) — 3 min",
+          "Ângela Soares (AC/UFAC) — 3 min",
+          "Marco Antônio Prado Nunes (SE) — 3 min",
+          "Jorge Ricardo de Souza Lira (PE) — 3 min",
+          "Jesus Antônio de Carvalho Abreu (PI) — 3 min",
+          "Lucíola Rolim (PB) — 3 min",
+          "Paulo Roberto da Silva Lima (PB) — 3 min",
+          "Severino Lourenço Jr. (BA/PE) — 3 min",
+          "Aldo Lacerda brasileiro (BA) — 3 min",
+          "Lineu Ferreira Jucá (CE) — 3 min",
+          "Gilberto Ferreira de Abreu Jr. (BA) — 3 min",
+          "Felipe José de Moura Vianna (AL) — 3 min",
+          "João Humberto da Fonseca Jr. (PE) — 3 min",
+          "Fábio Reis Motta (BA) — 3 min",
+          "José Francimário Bezerra do Nascimento (CE) — 3 min",
+          "Luiz Augusto Rogério Vasconcelos (BA) — 3 min",
+          "Marcelo Gomes da Silva (BA) — 3 min",
+          "João Luiz Barbosa Lima (BA) — 3 min",
+          "Francisco Chavier Vieira Bandeira (PB) — 3 min",
+          "Carlos Adriano Silva dos Santos (AL) — 3 min",
+          "André Araújo Sacchi (PB) — 3 min",
+          "Bruno Leonardo de Freitas Soares (PE) — 3 min",
+          "Nasser Hussein Mahfouz (MT) — 3 min",
+          "Gutenberg do Amaral Gurgel (RN) — 3 min",
+          "Manoel Ricardo Sena Nogueira (PB) — 3 min",
+          "Marcelo Araujo (BA) — 3 min",
+          "Jânio Rolim (PB) — 3 min",
+          "Filipe Amorim Braga (AL) — 3 min",
+          "Maurício Aquino (BA)",
+          "Charles Esteves (GO)"
+        ]
+      },
+      {
+        day: 1,
+        time: "11:00",
+        title: "Sessão de Temas Livres II — Startup e Ideação",
+        desc: "Apresentação de trabalhos na categoria Startup e Ideação.",
+        hosts: "Moderadores: Alcides Soares, Aldemar Araujo e Ziraldo Cardoso",
+        details: []
       },
       {
         day: 1,
         time: "12:10",
-        title: "Intervalo para Almoço",
-        desc: "Período livre de confraternização acadêmica.",
-        hosts: "Almoço não incluído na inscrição"
+        title: "Almoço",
+        desc: "Intervalo para almoço.",
+        hosts: "Almoço não incluído no evento",
+        details: []
       },
       {
         day: 1,
         time: "14:00",
-        title: "Mesa Redonda: Inovação em Diagnóstico e Tratamento das Varizes",
-        desc: "Estudos de US Doppler colorido, fleboestética, laser endovenoso, tratamento de edema e escleroterapia avançada.",
-        hosts: "Moderadores: Marcelo Araujo (BA) e Anderson Garílio (MG)"
+        title: "Mesa Redonda — Inovação em diagnóstico e tratamento das varizes",
+        desc: "Sessão dedicada a diagnóstico por imagem, procedimentos venosos, laser, edema, escleroterapia e fleboestética.",
+        hosts: "Moderadores: Marcelo Araujo (BA) e Carlos Alberto Rover (PR)",
+        details: [
+          "Novos achados de US Doppler colorido nas varizes — Fausto Miranda Jr. (SP) — 7 min",
+          "Sala avançada de procedimentos venosos: como montar e apresentar aos pacientes — Filipe Amorim Braga (AL) — 7 min",
+          "O laser endovenoso evoluiu ou involuiu no tratamento da doença varicosa — Gutenberg do Amaral Gurgel (RN) — 7 min",
+          "Tratar primeiro o edema e depois as varizes, ou primeiro as varizes? — Henrique Jorge Guedes (SP) — 7 min",
+          "Escleroterapia com laser — Felipe Omena (AL) — 7 min",
+          "Melhor opção estética para as varizes — Charles Esteves (GO) — 7 min"
+        ]
       },
       {
         day: 1,
         time: "15:30",
-        title: "Conferência: Tratando o Linfedema e Lipedema",
-        desc: "Lições e estratégias clínicas práticas adquiridas ao longo de décadas de tratamento.",
-        hosts: "Palestrante: Henrique Jorge Guedes Neto (SP) | Moderador: Anderson Gariglio (MG)"
+        title: "Conferência — Minha vida ensinando, treinando, vivendo e tratando o linfedema e lipedema",
+        desc: "Conferência com duração prevista de 30 minutos.",
+        hosts: "Palestrante: Henrique Jorge Guedes Neto (SP) | Moderador: Anderson Gariglio (MG)",
+        details: []
       },
       {
         day: 1,
         time: "16:00",
-        title: "Palestra: Startup Vascular One - Rastreando as Feridas",
-        desc: "Plataformas tecnológicas avançadas auxiliando no mapeamento e tratamento de feridas.",
-        hosts: "Moderador: Hugo Tenório (AL) | Palestrantes: Aldemar Araujo (AL) e Matheus Bittencourt (AL)"
+        title: "Palestra — Startup Vascular One: Rastreando as Feridas",
+        desc: "Palestra com duração prevista de 30 minutos.",
+        hosts: "Moderador: Hugo Tenório (AL)",
+        details: [
+          "Aldemar Araujo (AL/cFF) — 10 min",
+          "Matheus Bittencourt (AL) — 10 min"
+        ]
       },
       {
         day: 1,
         time: "16:00",
-        title: "Mesa Redonda: Capacitando o Serviço de Atendimento Domiciliar (SAD)",
-        desc: "Abordagem multiprofissional sobre nutrição cicatricial, manejo de úlceras e edemas no acamado.",
-        hosts: "Moderadores: Sioneide da Silva (AL) e Igor Emmanuel (AL)"
+        title: "Mesa Redonda — Capacitando o Serviço de Atendimento Domiciliar (SAD)",
+        desc: "Capacitação multiprofissional para cuidados domiciliares de pessoas acamadas com feridas.",
+        hosts: "Moderadores: Sioneide da Silva (AL) e Igor Emmanuel (AL)",
+        details: [
+          "Úlcera varicosa — Delizandra Marques (AL) — 10 min",
+          "Úlcera de pressão — Ana Paula Coelho (AL) — 10 min",
+          "Edema de pernas — Anyelle Aleluia (AL) — 10 min",
+          "Nutrição no acamado com ferida — Andréia Aragão (AL) — 10 min",
+          "Nutrição parenteral na cicatrização das feridas — Marina Regueira Pitta (SP) — 15 min"
+        ]
       },
       {
         day: 1,
-        time: "16:45",
-        title: "Mesa Redonda: Relatos de Experiências Exitosas nas Úlceras Varicosas",
-        desc: "Casos de sucesso com Bota de Unna com Melaleuca, ACP Derme e triagem de atenção básica.",
-        hosts: "Moderadores: Anderson Gariglio (MG) e Renata Ribeiro (AL)"
+        time: "17:00",
+        title: "Relatos de experiências exitosas nas úlceras varicosas e no pé diabético",
+        desc: "Relatos práticos sobre Bota de Unna, ACP Derme, podologia e fluxos da atenção básica.",
+        hosts: "Moderadores: Anderson Gariglio (MG) e Renata Ribeiro (AL)",
+        details: [
+          "Fórmula de Bota de Unna com Melaleuca — Rosa Patrícia Omena (AL) — 7 min",
+          "Colocação da Bota de Unna em camadas — Elvya Calheiros (AL) — 7 min",
+          "ACP Derme (água de coco) nas feridas do pé diabético — Diego Alvarez Naranjo (PR) — 7 min",
+          "Podologia nas deformidades — Sílvio Moraes (AL) — 7 min",
+          "Referências e contrarreferências na atenção básica — Tais Amorim Braga (AL) — 7 min"
+        ]
       },
       {
         day: 1,
         time: "17:30",
-        title: "Sessão de Temas Livres II",
-        desc: "Apresentações científicas de ensaios e relatos em andamento nas universidades parceiras.",
-        hosts: "Comissão de avaliação: Aldemar Araujo e Marcelo Araujo"
+        title: "Sessão de Temas Livres III",
+        desc: "Continuação das apresentações científicas.",
+        hosts: "Comissão de avaliação: Aldemar Araujo e Marcelo Araujo",
+        details: []
       },
       {
         day: 1,
         time: "20:00",
-        title: "Jantar de Confraternização - Restaurante Maria Antonieta",
-        desc: "Homenagens especiais e entrega do Prêmio Prof. Fausto Miranda Jr. e Geneci Moura de Sá.",
-        hosts: "Homenageados: Henrique Jorge Guedes Neto, Fausto Miranda Jr., Adamastor Humberto Pereira e José Aderval Aragão"
+        title: "Jantar de Confraternização — Restaurante Maria Antonieta",
+        desc: "Jantar na Jatiúca, Maceió, com homenagens especiais e entrega do Prêmio Prof. Fausto Miranda Jr.",
+        hosts: "Homenageados: Henrique Jorge Guedes Neto (SP) e Geneci Moura de Sá (AL)",
+        details: [
+          "Prof. Fausto Miranda Jr. (SP) — Acreditar no Programa de PG em Anestesiologia, Cirurgia Vascular e Cardíaca (M/D), concebido e criado na EPM/UNIFESP — 10 min",
+          "Prof. Adamastor Humberto Pereira (RS) — Como foi introduzir nordestino no Programa de M/D de Cirurgia da UFRGS — 10 min",
+          "Prof. José Aderval Aragão (SE) — História na PG EPM/UNIFESP e ECMAL/UNIFESP, com turmas de sergipanos, baianos, pernambucanos e brasileiros — 10 min"
+        ]
       },
-
-      // SÁBADO
       {
         day: 2,
         time: "08:00",
-        title: "Mesa Redonda: Simplificando o Atendimento na Casa Fecha Feridas (cFF)",
-        desc: "Estruturação clínica e de reabilitação com Membracel, Terapia Física e Técnica Godoy.",
-        hosts: "Moderadoras: Iana Sampaio (AL) e Itajaciara Barbosa (AL)"
+        title: "Mesa Redonda — Simplificando o atendimento na Casa Fecha Feridas — UNCISAL",
+        desc: "Casa Fecha Feridas “Prof. Isaac Soares Lima” (cFF).",
+        hosts: "Moderadoras: Iana Sampaio (AL) e Itajaciara Barbosa (AL)",
+        details: [
+          "Experiência do Centro de Atendimento ao Diabetes (CADI) — Ariádine Barbosa (AL), Clínica Salute, Palmeira dos Índios — 7 min",
+          "Classificando as feridas — Aldemar Araujo Castro (AL/cFF) — 7 min",
+          "Debridamento — Guilherme Pitta (AL/cFF/CESMAC) — 7 min",
+          "Curativo nas úlceras varicosas — Delizandra Marques (AL/cFF) — 7 min",
+          "Inovando no tratamento do edema das feridas — João Gabriel (BA) — 7 min",
+          "Plataforma de Projetos de Pesquisa — Gardênia de Castro (AL/cFF/UNCISAL) — 7 min"
+        ]
+      },
+      {
+        day: 2,
+        time: "09:00",
+        title: "Lançamento do Estudo Multicêntrico de Aspirado de Medula no tratamento das feridas complexas",
+        desc: "Lançamento do estudo multicêntrico.",
+        hosts: "Palestrante: Marcelo Calil Burihan (SP) | Moderador: Aldemar Araujo Castro (AL)",
+        details: []
       },
       {
         day: 2,
         time: "09:30",
-        title: "Lançamento do Estudo Multicêntrico de Aspirado de Medula no Tratamento de Feridas",
-        desc: "Novo protocolo prospectivo multicêntrico revolucionando o manejo de feridas complexas.",
-        hosts: "Palestrante: Marcelo Calil Burihan (SP) | Moderador: Aldemar Araujo Castro (AL)"
-      },
-      {
-        day: 2,
-        time: "10:00",
-        title: "Mesa Redonda: Atendimento de Pacientes com Pé Diabético em Alagoas",
-        desc: "Estatísticas de peregrinação, geolocalização dos pacientes e discussões éticas com conselheiros e juízes federais.",
-        hosts: "Debatedores: Emmanuel Forte (CFM), Antônio José (TRF5), Maurício Pitta (MP-AL), Ricardo Melro e convidados"
+        title: "Mesa Redonda — Atendimento dos pacientes com pé diabético em Alagoas",
+        desc: "Apresentações sobre a peregrinação dos pacientes, a Lei Municipal do Pé Diabético e a origem geográfica das pessoas atendidas.",
+        hosts: "Mesa com especialistas da saúde, do Judiciário, do Ministério Público, da Defensoria e de entidades médicas",
+        details: [
+          "Peregrinação dos pacientes com pé diabético na Saúde Pública de Alagoas — Bianca Lino (LANGIO/CESMAC) — 10 min; Guilherme Pitta (UNCISAL)",
+          "Aplicação jurídica da Lei Municipal do Pé Diabético — Prof. Gerson Odilon (UFAL) — 10 min",
+          "Localidades dos pacientes atendidos na Casa Fecha Feridas — Luis Antônio (LAVA/UNCISAL) — 10 min; tutor: Aldemar Araujo (UNCISAL)",
+          "Debatedor: Emmanuel Forte Cavalcanti, vice-presidente do CFM — 5 min",
+          "Debatedor: Antônio José Araújo (AL), juiz federal do TRF5 — 5 min",
+          "Debatedora: Micheline Tenório, promotora do MP-AL — 5 min",
+          "Debatedor: Henrique de Oliveira Costa (AL), ex-reitor da UNCISAL — 5 min",
+          "Debatedor: Fernando Gomes Andrade (AL), presidente da SMA — 5 min",
+          "Debatedor: José Cícero Alves da Silva (AL), juiz estadual",
+          "Debatedor: Marcelo Calil Burihan (SP), ex-presidente da SBACV-SP — 5 min",
+          "Debatedora: Sílvia Maria Gomes (AL), presidente do SINMED — 5 min",
+          "Debatedor: Leonardo Dias (AL), vereador de Maceió — 5 min",
+          "Debatedor: Ricardo Melro, defensor público — 5 min"
+        ]
       },
       {
         day: 2,
         time: "10:30",
-        title: "Palestra: Avanços na Terapia Hiperbárica no Pé Diabético",
-        desc: "Controle de infecções sistêmicas graves e salvamento de membros utilizando oxigenação.",
-        hosts: "Palestrante: Hudson Fernandes (SP) | Moderadora: Renata Ribeiro (AL)"
+        title: "Palestra — Avanços na Terapia Hiperbárica no Pé Diabético com infecção grave",
+        desc: "Avanços da terapia hiperbárica no cuidado de pessoas com pé diabético e infecção grave.",
+        hosts: "Palestrante: Hudson Fernandes (SP), serviço de hiperbárica do Hospital Le Fort | Moderadora: Renata Ribeiro (AL), serviço de hiperbárica do Agreste, Arapiraca",
+        details: []
       },
       {
         day: 2,
         time: "11:00",
-        title: "Sessão de Temas Livres III (Grande Premiação)",
-        desc: "Apresentação competitiva dos melhores trabalhos científicos disputando o prêmio principal do congresso.",
-        hosts: "Comissão de avaliação: Aldemar Araujo e Marcelo Araujo"
+        title: "Sessão de Temas Livres III — Premiação",
+        desc: "Os temas livres desta sessão disputam o prêmio de melhor tema livre do evento.",
+        hosts: "Comissão de avaliação: Aldemar Araujo e Marcelo Araujo",
+        details: []
       },
       {
         day: 2,
         time: "13:00",
-        title: "Cerimônia de Encerramento",
-        desc: "Encerramento formal do congresso, premiação e agradecimentos aos patrocinadores e comissão científica.",
-        hosts: "Comissão Organizadora"
+        title: "Encerramento",
+        desc: "Encerramento oficial do XV Congresso cENDOVASCULAR Internacional.",
+        hosts: "Comissão Organizadora",
+        details: []
       }
     ];
 
@@ -728,9 +833,13 @@
 
       const filtered = schedule.filter(item => {
         const matchesDay = item.day === currentDay;
-        const matchesSearch = item.title.toLowerCase().includes(scheduleSearchQuery.toLowerCase()) || 
-                              item.desc.toLowerCase().includes(scheduleSearchQuery.toLowerCase()) ||
-                              item.hosts.toLowerCase().includes(scheduleSearchQuery.toLowerCase());
+        const searchableText = [
+          item.title,
+          item.desc,
+          item.hosts,
+          ...(item.details || [])
+        ].join(" ").toLowerCase();
+        const matchesSearch = searchableText.includes(scheduleSearchQuery.toLowerCase());
         return matchesDay && matchesSearch;
       });
 
@@ -752,6 +861,11 @@
               
               <h4 class="text-sm sm:text-base lg:text-lg font-bold text-white mb-2">${item.title}</h4>
               <p class="text-xs sm:text-sm text-slate-400 leading-relaxed mb-4">${item.desc}</p>
+              ${item.details && item.details.length ? `
+                <ol class="space-y-2 mb-4 pl-5 list-decimal text-xs sm:text-sm text-slate-300 leading-relaxed">
+                  ${item.details.map(detail => `<li>${detail}</li>`).join("")}
+                </ol>
+              ` : ""}
               
               <div class="border-t border-slate-850 pt-3 flex flex-col sm:flex-row sm:items-center justify-between gap-3 text-xs">
                 <span class="text-slate-500 font-semibold italic flex items-center gap-1.5">
@@ -842,8 +956,10 @@
 
       renderSpeakers();
     }
+
+    // Garante que a programação e os convidados sejam exibidos ao abrir a página.
+    renderSchedule();
+    renderSpeakers();
   </script>
-</body>
-</html>
-```
-`\n`
+
+</body></html>
