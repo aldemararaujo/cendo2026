@@ -1,15 +1,23 @@
 <!DOCTYPE html>
-<html lang="pt-BR" class="scroll-smooth"><head>
+<html lang="pt-BR" class="scroll-smooth dark" data-theme="dark"><head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>XV Congresso cENDOVASCULAR Internacional</title>
   <meta name="version" content="1.5">
   <meta name="last-modified" content="2026-07-24">
-  <meta name="google-doc-revision" content="10271">
+  <script>
+    (() => {
+      const savedTheme = localStorage.getItem("cendo-theme");
+      const initialTheme = savedTheme === "light" ? "light" : "dark";
+      document.documentElement.dataset.theme = initialTheme;
+      document.documentElement.classList.toggle("dark", initialTheme === "dark");
+      document.documentElement.style.colorScheme = initialTheme;
+    })();
+  </script>
   
   <!-- Configurações PWA e Metadados para Dispositivos Móveis -->
   <link rel="manifest" href="manifest.json">
-  <meta name="theme-color" content="#0d9488">
+  <meta name="theme-color" content="#061426">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="apple-mobile-web-app-title" content="cENDOVASCULAR">
@@ -47,7 +55,7 @@
 
   <style>
     .glass-nav {
-      background: rgba(15, 23, 42, 0.9);
+      background: rgba(6, 20, 38, 0.94);
       backdrop-filter: blur(12px);
     }
     .glass-card {
@@ -70,6 +78,160 @@
     }
     ::-webkit-scrollbar-thumb:hover {
       background: #475569;
+    }
+
+    html[data-theme="dark"] {
+      color-scheme: dark;
+    }
+    html[data-theme="dark"] body,
+    html[data-theme="dark"] .bg-slate-900 {
+      background-color: #0b1f3a !important;
+    }
+    html[data-theme="dark"] .bg-slate-950 {
+      background-color: #061426 !important;
+    }
+    html[data-theme="dark"] .bg-slate-850,
+    html[data-theme="dark"] [class~="bg-slate-800,60"],
+    html[data-theme="dark"] [class~="bg-slate-800,40"],
+    html[data-theme="dark"] [class~="bg-slate-900,80"] {
+      background-color: #102a49 !important;
+    }
+    html[data-theme="dark"] .from-slate-950 {
+      --tw-gradient-from: #061426 var(--tw-gradient-from-position) !important;
+      --tw-gradient-to: rgb(6 20 38 / 0) var(--tw-gradient-to-position) !important;
+    }
+    html[data-theme="dark"] .to-slate-900 {
+      --tw-gradient-to: #0b1f3a var(--tw-gradient-to-position) !important;
+    }
+
+    html[data-theme="light"] {
+      color-scheme: light;
+    }
+    html[data-theme="light"] body,
+    html[data-theme="light"] .bg-slate-900 {
+      background-color: #f8fafc !important;
+    }
+    html[data-theme="light"] .bg-slate-950 {
+      background-color: #eaf2fb !important;
+    }
+    html[data-theme="light"] .bg-slate-850,
+    html[data-theme="light"] .bg-slate-800,
+    html[data-theme="light"] [class~="bg-slate-800,60"],
+    html[data-theme="light"] [class~="bg-slate-800,40"],
+    html[data-theme="light"] [class~="bg-slate-900,80"] {
+      background-color: #ffffff !important;
+    }
+    html[data-theme="light"] .glass-nav {
+      background: rgba(255, 255, 255, 0.94);
+      box-shadow: 0 10px 30px rgba(12, 35, 64, 0.08);
+    }
+    html[data-theme="light"] .glass-card {
+      background: rgba(255, 255, 255, 0.9);
+      border-color: #cbd5e1;
+    }
+    html[data-theme="light"] .from-slate-950 {
+      --tw-gradient-from: #dceafb var(--tw-gradient-from-position) !important;
+      --tw-gradient-to: rgb(220 234 251 / 0) var(--tw-gradient-to-position) !important;
+    }
+    html[data-theme="light"] .to-slate-900 {
+      --tw-gradient-to: #f8fafc var(--tw-gradient-to-position) !important;
+    }
+    html[data-theme="light"] .text-white,
+    html[data-theme="light"] .text-slate-100,
+    html[data-theme="light"] .text-slate-200 {
+      color: #0c2340 !important;
+    }
+    html[data-theme="light"] .text-slate-300 {
+      color: #1e3a5f !important;
+    }
+    html[data-theme="light"] .text-slate-400 {
+      color: #475569 !important;
+    }
+    html[data-theme="light"] .text-slate-500,
+    html[data-theme="light"] .text-slate-600 {
+      color: #64748b !important;
+    }
+    html[data-theme="light"] .hover\:text-white:hover {
+      color: #0c2340 !important;
+    }
+    html[data-theme="light"] .border-slate-700,
+    html[data-theme="light"] .border-slate-750,
+    html[data-theme="light"] .border-slate-800,
+    html[data-theme="light"] .border-slate-850,
+    html[data-theme="light"] .border-slate-900 {
+      border-color: #cbd5e1 !important;
+    }
+    html[data-theme="light"] .hover\:border-slate-700:hover,
+    html[data-theme="light"] .hover\:border-slate-600:hover {
+      border-color: #94a3b8 !important;
+    }
+    html[data-theme="light"] .hover\:bg-slate-700:hover,
+    html[data-theme="light"] .hover\:bg-slate-800:hover {
+      background-color: #dbeafe !important;
+    }
+    html[data-theme="light"] .placeholder-slate-500::placeholder {
+      color: #64748b !important;
+    }
+    html[data-theme="light"] .bg-brand-teal.text-white,
+    html[data-theme="light"] .bg-brand-red.text-white,
+    html[data-theme="light"] [class*="from-brand-teal"].text-white {
+      color: #ffffff !important;
+    }
+    html[data-theme="light"] ::-webkit-scrollbar-track {
+      background: #e2e8f0;
+    }
+    html[data-theme="light"] ::-webkit-scrollbar-thumb {
+      background: #94a3b8;
+    }
+
+    .theme-toggle {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.45rem;
+      min-height: 2.5rem;
+      padding: 0.5rem 0.7rem;
+      border: 1px solid #315071;
+      border-radius: 9999px;
+      background: #102a49;
+      color: #e2e8f0;
+      font-size: 0.75rem;
+      font-weight: 700;
+      line-height: 1;
+    }
+    .theme-toggle:hover {
+      background: #173b64;
+      border-color: #4b6f96;
+    }
+    .theme-toggle:focus-visible {
+      outline: 3px solid rgba(13, 148, 136, 0.42);
+      outline-offset: 3px;
+    }
+    html[data-theme="light"] .theme-toggle {
+      background: #eff6ff;
+      border-color: #b6c9df;
+      color: #0c2340;
+    }
+    html[data-theme="light"] .theme-toggle:hover {
+      background: #dbeafe;
+      border-color: #7fa0c5;
+    }
+    @media (max-width: 639px) {
+      .theme-toggle {
+        width: 2.5rem;
+        padding-inline: 0;
+      }
+      .theme-toggle-label {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border: 0;
+      }
     }
   </style>
 </head>
@@ -99,6 +261,16 @@
 
       <!-- Botão de Inscrição Oficial -->
       <div class="flex items-center gap-2 sm:gap-4">
+        <button id="theme-toggle" type="button" class="theme-toggle" onclick="toggleTheme()" aria-label="Ativar tema claro" aria-pressed="false">
+          <svg id="theme-icon-sun" class="w-4 h-4" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364-.707-.707M6.343 6.343l-.707-.707m12.728 0-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path>
+          </svg>
+          <svg id="theme-icon-moon" class="w-4 h-4 hidden" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646a9.003 9.003 0 1011.708 11.708z"></path>
+          </svg>
+          <span id="theme-toggle-label" class="theme-toggle-label">Tema claro</span>
+          <span id="theme-status" class="sr-only" aria-live="polite"></span>
+        </button>
         <a href="https://e3eventos.com/cendovascular" target="_blank" class="bg-gradient-to-r from-brand-teal to-teal-500 hover:from-teal-500 hover:to-brand-teal text-white px-4 sm:px-5 py-2 sm:py-2.5 rounded-full text-xs sm:text-sm font-bold shadow-lg shadow-teal-950 transition-all flex items-center gap-2">
           Inscreva-se
           <svg class="w-4 h-4 hidden sm:block" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
@@ -647,13 +819,13 @@
       {
         day: 1,
         time: "11:00",
-        title: "Sessão de Temas Livres Orais II — Startup/Ideação",
+        title: "Sessão de Temas Livres Orais II — Startup e Ideação",
         desc: "Apresentação de trabalhos na categoria Startup e Ideação.",
         hosts: "Moderadores: Alcides Soares, Aldemar Araujo e Ziraldo Cardoso",
         details: [
           "Wound Smart ACP: Plataforma Inteligente para Avaliação, Predição e Monitoramento Longitudinal de Feridas Crônicas — 7 min",
           "Cuidado em Dia: aplicativo de telemonitoramento com inteligência artificial para manejo do risco cardiovascular em pessoas com diabetes — 7 min",
-          "MinhaUNHA: Plataforma inteligente para Identificação Onicodistrofias e Onicopatias — 7 min",
+          "MinhaUNHA: Plataforma inteligente para Identificação de Onicodistrofias e Onicopatias — 7 min",
           "MeuPÉestrutural: Inteligência Artificial para Diagnóstico e Tratamento das Deformidades dos Pés — 7 min",
           "MeuCALO: Plataforma Inteligente para Identificação Precoce do Pé em Risco e Prevenção de Úlceras em Pessoas com Diabetes — 7 min"
         ]
@@ -835,6 +1007,39 @@
       menu.classList.toggle("hidden");
     }
 
+    function applyTheme(theme, announce = false) {
+      const selectedTheme = theme === "light" ? "light" : "dark";
+      const isLight = selectedTheme === "light";
+      const root = document.documentElement;
+      const toggle = document.getElementById("theme-toggle");
+      const label = document.getElementById("theme-toggle-label");
+      const status = document.getElementById("theme-status");
+      const sunIcon = document.getElementById("theme-icon-sun");
+      const moonIcon = document.getElementById("theme-icon-moon");
+      const themeColor = document.querySelector('meta[name="theme-color"]');
+
+      root.dataset.theme = selectedTheme;
+      root.classList.toggle("dark", !isLight);
+      root.style.colorScheme = selectedTheme;
+      localStorage.setItem("cendo-theme", selectedTheme);
+
+      toggle.setAttribute("aria-pressed", String(isLight));
+      toggle.setAttribute("aria-label", isLight ? "Ativar tema escuro" : "Ativar tema claro");
+      label.textContent = isLight ? "Tema escuro" : "Tema claro";
+      sunIcon.classList.toggle("hidden", isLight);
+      moonIcon.classList.toggle("hidden", !isLight);
+      themeColor.setAttribute("content", isLight ? "#f8fafc" : "#061426");
+
+      if (announce) {
+        status.textContent = isLight ? "Tema claro ativado" : "Tema escuro ativado";
+      }
+    }
+
+    function toggleTheme() {
+      const nextTheme = document.documentElement.dataset.theme === "light" ? "dark" : "light";
+      applyTheme(nextTheme, true);
+    }
+
     function switchDay(day) {
       currentDay = day;
       
@@ -982,6 +1187,9 @@
 
       renderSpeakers();
     }
+
+    // Garante o tema padrão azul-escuro e restaura a escolha feita no navegador.
+    applyTheme(localStorage.getItem("cendo-theme") === "light" ? "light" : "dark");
 
     // Garante que a programação e os convidados sejam exibidos ao abrir a página.
     renderSchedule();
