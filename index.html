@@ -3,9 +3,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>XV Congresso cENDOVASCULAR Internacional</title>
-  <meta name="version" content="1.8">
+  <meta name="version" content="1.9">
   <meta name="last-modified" content="2026-07-26">
-  <meta name="google-doc-revision" content="10366">
+  <meta name="google-doc-revision" content="10629">
   <script>
     (() => {
       const savedTheme = localStorage.getItem("cendo-theme");
@@ -682,7 +682,7 @@
           <h4 class="text-sm font-bold text-white mb-4">Secretaria Organizadora</h4>
           <p class="text-xs text-slate-500 mb-2 leading-relaxed">COMUNIC Eventos Científicos</p>
           <a href="https://comuniceventos.com.br" target="_blank" class="text-xs text-brand-teal hover:underline block mb-1">www.comuniceventos.com.br</a>
-          <a href="https://cendovascular.com.br" target="_blank" class="text-xs text-brand-teal hover:underline block">www.cendovascular.com.br</a>
+          <a href="https://www.cendovascular.org" target="_blank" class="text-xs text-brand-teal hover:underline block">www.cendovascular.org</a>
         </div>
         <div>
           <h4 class="text-sm font-bold text-white mb-4">Avisos</h4>
@@ -694,7 +694,7 @@
       </div>
       <div class="border-t border-slate-900 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-[10px] sm:text-xs">
         <p class="text-center sm:text-left">© 2026 XV Congresso cENDOVASCULAR Internacional. Desenvolvido com foco ético e científico.</p>
-        <p class="text-slate-600">Versão 1.8 — 26/07/2026 · Maceió, Alagoas, Brasil</p>
+        <p class="text-slate-600">Versão 1.9 — 26/07/2026 · Maceió, Alagoas, Brasil</p>
       </div>
     </div>
   </footer>
@@ -717,12 +717,11 @@
       });
     }
 
-    // Relação oficial de convidados e comissões — versão 1.8, 26/07/2026.
+    // Relação oficial de convidados e comissões — versão 1.9, 26/07/2026.
     const speakers = [
       { name: "Prof. Rui Manoel Lopes Nunes", loc: "Portugal", isInt: true, role: "Convidado internacional e palestrante da Conferência Magistral I: TCLE na Pesquisa" },
       { name: "Adamastor Humberto Pereira", loc: "RS", isInt: false, role: "Convidado nacional, palestrante, moderador e homenageado" },
       { name: "Ariadine Barbosa", loc: "AL", isInt: false, role: "Convidada nacional" },
-      { name: "Cristiane Mello", loc: "CE", isInt: false, role: "Convidada nacional" },
       { name: "Fausto Miranda Jr.", loc: "SP", isInt: false, role: "Convidado nacional, moderador e homenageado com medalha" },
       { name: "Diego Alvarez Naranjo", loc: "PR", isInt: false, role: "Convidado nacional e palestrante sobre ACP Derme" },
       { name: "Elvya Calheiros", loc: "AL", isInt: false, role: "Convidada nacional e palestrante sobre Bota de Unna" },
@@ -730,10 +729,9 @@
       { name: "Hudson Fernandes", loc: "SP", isInt: false, role: "Convidado nacional e palestrante sobre terapia hiperbárica" },
       { name: "João Gabriel", loc: "BA", isInt: false, role: "Convidado nacional e palestrante sobre edema das feridas" },
       { name: "Jorge Henrique Guedes Neto", loc: "SP", isInt: false, role: "Homenageado especial; a programação também registra o nome como Henrique Jorge Guedes Neto" },
-      { name: "José Ferreira Nunes", loc: "CE", isInt: false, role: "Convidado nacional" },
       { name: "Marcelo Araujo", loc: "BA", isInt: false, role: "Convidado nacional; comissões científica e organizadora" },
       { name: "Rosa Patrícia Omena", loc: "AL", isInt: false, role: "Convidada nacional e palestrante sobre Bota de Unna com Melaleuca" },
-      { name: "Sauri Chaves", loc: "Cuba", isInt: true, role: "Convidado internacional" },
+      { name: "Rui Manoel Lopes Nunes", loc: "Por", isInt: false, role: "Convidado nacional" },
       { name: "Aldemar Araujo Castro", loc: "AL", isInt: false, role: "Comissões científica e organizadora" },
       { name: "Filipe Amorim Braga", loc: "AL", isInt: false, role: "Comissão organizadora e palestrante" },
       { name: "Guilherme Pitta", loc: "AL", isInt: false, role: "Comissão organizadora e palestrante" },
@@ -741,7 +739,7 @@
       { name: "Raquel Teixeira Celestino", loc: "AL", isInt: false, role: "Comissões científica e organizadora" }
     ];
 
-    // Programação oficial completa — versão 1.8, 26/07/2026.
+    // Programação oficial completa — versão 1.9, 26/07/2026.
     const schedule = [
       {
         day: 1,
@@ -806,7 +804,6 @@
           "Francisco Chavier Vieira Bandeira (PB) — 3 min",
           "Carlos Adriano Silva dos Santos (AL) — 3 min",
           "André Araújo Sacchi (PB) — 3 min",
-          "Bruno Leonardo de Freitas Soares (PE) — 3 min",
           "Nasser Hussein Mahfouz (MT) — 3 min",
           "Gutenberg do Amaral Gurgel (RN) — 3 min",
           "Manoel Ricardo Sena Nogueira (PB) — 3 min",
@@ -815,6 +812,17 @@
           "Filipe Amorim Braga (AL) — 3 min",
           "Maurício Aquino (BA)",
           "Charles Esteves (GO)"
+        ]
+      },
+      {
+        day: 1,
+        time: "11:00",
+        title: "Abertura Oficial",
+        desc: "Abertura oficial com apresentações culturais.",
+        hosts: "Programação oficial",
+        details: [
+          "Poema do Amor PG — Ednaldo Torres (PE)",
+          "Dança Carimbó — Universidade 3ª Idade (UNCISATI/UNCISAL)"
         ]
       },
       {
@@ -927,7 +935,7 @@
         time: "20:00",
         title: "Jantar de Confraternização — Restaurante Maria Antonieta",
         desc: "Jantar na Jatiúca, Maceió, com homenagens especiais e entrega do Prêmio Prof. Fausto Miranda Jr.",
-        hosts: "Homenageados: Henrique Jorge Guedes Neto (SP) e Geneci Moura de Sá (AL)",
+        hosts: "Homenageados: Henrique Jorge Guedes Neto (SP), André Falcão Pedrosa Costa (AL) e Geneci Moura de Sá (AL)",
         details: [
           "Prof. Fausto Miranda Jr. (SP) — Acreditar no Programa de PG em Anestesiologia, Cirurgia Vascular e Cardíaca (M/D), concebido e criado na EPM/UNIFESP — 10 min",
           "Prof. Adamastor Humberto Pereira (RS) — Como foi introduzir nordestino no Programa de M/D de Cirurgia da UFRGS — 10 min",
