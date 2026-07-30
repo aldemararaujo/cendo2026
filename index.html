@@ -3,7 +3,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>XV Congresso cENDOVASCULAR Internacional</title>
-  <meta name="version" content="2.9">
+  <meta name="version" content="2.10">
   <meta name="last-modified" content="2026-07-30">
   <meta name="google-doc-revision" content="11042">
   <script>
@@ -473,14 +473,17 @@
           </div>
           <!-- Dias de Exibicao -->
           <div class="bg-slate-900 border border-slate-800 rounded-2xl sm:rounded-full p-1 grid grid-cols-1 gap-1 w-full sm:flex sm:w-auto">
-            <button id="btn-day0" onclick="switchDay(0)" class="whitespace-nowrap px-4 sm:px-6 py-2.5 sm:py-2 min-h-[44px] sm:min-h-0 rounded-xl sm:rounded-full text-xs sm:text-sm font-bold transition-all text-center bg-brand-teal text-white w-full sm:w-auto">
-              Quinta (30 de Julho)
+            <button id="btn-day0" onclick="switchDay(0)" class="whitespace-nowrap px-4 sm:px-6 py-2.5 sm:py-2 min-h-[60px] sm:min-h-0 rounded-xl sm:rounded-full text-xs sm:text-sm font-bold transition-all text-center bg-brand-teal text-white w-full sm:w-auto">
+              <span class="block sm:inline">Quinta</span>
+              <span class="block text-[11px] font-medium opacity-80 sm:inline sm:ml-1 sm:text-sm sm:font-bold sm:opacity-100">(30 de Julho)</span>
             </button>
-            <button id="btn-day1" onclick="switchDay(1)" class="whitespace-nowrap px-4 sm:px-6 py-2.5 sm:py-2 min-h-[44px] sm:min-h-0 rounded-xl sm:rounded-full text-xs sm:text-sm font-bold transition-all text-center text-slate-400 hover:text-white w-full sm:w-auto">
-              Sexta (31 de Julho)
+            <button id="btn-day1" onclick="switchDay(1)" class="whitespace-nowrap px-4 sm:px-6 py-2.5 sm:py-2 min-h-[60px] sm:min-h-0 rounded-xl sm:rounded-full text-xs sm:text-sm font-bold transition-all text-center text-slate-400 hover:text-white w-full sm:w-auto">
+              <span class="block sm:inline">Sexta</span>
+              <span class="block text-[11px] font-medium opacity-80 sm:inline sm:ml-1 sm:text-sm sm:font-bold sm:opacity-100">(31 de Julho)</span>
             </button>
-            <button id="btn-day2" onclick="switchDay(2)" class="whitespace-nowrap px-4 sm:px-6 py-2.5 sm:py-2 min-h-[44px] sm:min-h-0 rounded-xl sm:rounded-full text-xs sm:text-sm font-bold transition-all text-center text-slate-400 hover:text-white w-full sm:w-auto">
-              Sábado (01 de Agosto)
+            <button id="btn-day2" onclick="switchDay(2)" class="whitespace-nowrap px-4 sm:px-6 py-2.5 sm:py-2 min-h-[60px] sm:min-h-0 rounded-xl sm:rounded-full text-xs sm:text-sm font-bold transition-all text-center text-slate-400 hover:text-white w-full sm:w-auto">
+              <span class="block sm:inline">Sábado</span>
+              <span class="block text-[11px] font-medium opacity-80 sm:inline sm:ml-1 sm:text-sm sm:font-bold sm:opacity-100">(01 de Agosto)</span>
             </button>
           </div>
         </div>
@@ -1072,7 +1075,7 @@
 
       [d0Btn, d1Btn, d2Btn].forEach((button, index) => {
         const active = index === day;
-        button.className = `whitespace-nowrap px-4 sm:px-6 py-2.5 sm:py-2 min-h-[44px] sm:min-h-0 rounded-xl sm:rounded-full text-xs sm:text-sm font-bold transition-all text-center w-full sm:w-auto ${active ? "bg-brand-teal text-white" : "text-slate-400 hover:text-white"}`;
+        button.className = `whitespace-nowrap px-4 sm:px-6 py-2.5 sm:py-2 min-h-[60px] sm:min-h-0 rounded-xl sm:rounded-full text-xs sm:text-sm font-bold transition-all text-center w-full sm:w-auto ${active ? "bg-brand-teal text-white" : "text-slate-400 hover:text-white"}`;
       });
 
       renderSchedule();
@@ -1226,6 +1229,7 @@
   </script>
 
 </body></html>
+
 
 
 
