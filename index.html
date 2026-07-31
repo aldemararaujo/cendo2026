@@ -3,9 +3,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>XV Congresso cENDOVASCULAR Internacional</title>
-  <meta name="version" content="2.10">
-  <meta name="last-modified" content="2026-07-30">
-  <meta name="google-doc-revision" content="11042">
+  <meta name="version" content="2.11">
+  <meta name="last-modified" content="2026-07-31">
+  <meta name="google-doc-revision" content="11065">
   <script>
     (() => {
       const savedTheme = localStorage.getItem("cendo-theme");
@@ -891,6 +891,8 @@
         hosts: "Moderador: Hugo Tenório (AL)",
         url: "https://vascularone.app",
         ctaLabel: "Acessar VascularONE",
+        secondaryUrl: "https://cff.uncisal.edu.br",
+        secondaryCtaLabel: "Acessar cFF UNCISAL",
         details: [
           "Matheus Bittencourt (AL) — 10 min",
           "Aldemar Araujo (AL/cFF) — 10 min"
@@ -1116,11 +1118,21 @@
               
               <h4 class="text-sm sm:text-base lg:text-lg font-bold text-white mb-2">${item.title}</h4>
               <p class="text-xs sm:text-sm text-slate-400 leading-relaxed mb-4">${item.desc}</p>
-              ${item.url ? `
-                <a href="${item.url}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-xs sm:text-sm font-bold text-brand-teal hover:text-teal-300 mb-4 focus:outline-none focus:ring-2 focus:ring-brand-teal focus:ring-offset-2 focus:ring-offset-slate-900 rounded-md">
-                  ${item.ctaLabel || "Acessar link"}
-                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
-                </a>
+              ${item.url || item.secondaryUrl ? `
+                <div class="flex flex-wrap items-center gap-x-5 gap-y-2 mb-4">
+                  ${item.url ? `
+                    <a href="${item.url}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-xs sm:text-sm font-bold text-brand-teal hover:text-teal-300 focus:outline-none focus:ring-2 focus:ring-brand-teal focus:ring-offset-2 focus:ring-offset-slate-900 rounded-md">
+                      ${item.ctaLabel || "Acessar link"}
+                      <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                    </a>
+                  ` : ""}
+                  ${item.secondaryUrl ? `
+                    <a href="${item.secondaryUrl}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-xs sm:text-sm font-bold text-brand-teal hover:text-teal-300 focus:outline-none focus:ring-2 focus:ring-brand-teal focus:ring-offset-2 focus:ring-offset-slate-900 rounded-md">
+                      ${item.secondaryCtaLabel || "Acessar link adicional"}
+                      <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                    </a>
+                  ` : ""}
+                </div>
               ` : ""}
               ${item.details && item.details.length ? `
                 ${item.detailsOrdered === false
@@ -1229,6 +1241,7 @@
   </script>
 
 </body></html>
+
 
 
 
