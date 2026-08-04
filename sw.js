@@ -1,45 +1,47 @@
-// Nome do cache para controle de versao do aplicativo offline
-const CACHE_NAME = "cendovascular-cache-v1";
+// Service Worker cENDOVASCULAR v2.19 — 04/08/2026
+// Nome do cache versionado para substituir imediatamente a cópia anterior.
+const CACHE_NAME = "cendovascular-cache-v2.19-2026-08-04";
 
-// Arquivos essenciais que serao armazenados em cache para acesso offline
 const ASSETS_TO_CACHE = [
   "index.html",
   "manifest.json"
 ];
 
-// Evento de instalacao do Service Worker
+// Instala a nova versão buscando os arquivos diretamente da rede.
 self.addEventListener("install", (event) => {
   event.waitUntil(
-    caches.open(CACHE_NAME).then((cache) => {
-      console.log("Arquivos armazenados em cache com sucesso para suporte offline");
-      return cache.addAll(ASSETS_TO_CACHE);
-    })
+    caches.open(CACHE_NAME)
+      .then((cache) => Promise.all(
+        ASSETS_TO_CACHE.map((asset) =>
+          fetch(new Request(asset, { cache: "reload" }))
+            .then((response) => {
+              if (!response.ok) {
+                throw new Error(`Falha ao atualizar o cache: ${asset}`);
+              }
+              return cache.put(asset, response);
+            })
+        )
+      ))
+      .then(() => self.skipWaiting())
   );
 });
 
-// Evento de ativacao do Service Worker, limpando caches antigos do dispositivo
+// Remove caches antigos e passa a controlar as páginas abertas.
 self.addEventListener("activate", (event) => {
   event.waitUntil(
-    caches.keys().then((keys) => {
-      return Promise.all(
-        keys.map((key) => {
-          if (key !== CACHE_NAME) {
-            console.log("Removendo cache antigo do sistema:", key);
-            return caches.delete(key);
-          }
-        })
-      );
-    })
+    caches.keys()
+      .then((keys) => Promise.all(
+        keys.map((key) => key !== CACHE_NAME ? caches.delete(key) : undefined)
+      ))
+      .then(() => self.clients.claim())
   );
 });
 
-// Evento de busca de recursos (Fetch), priorizando o cache offline se necessario
+// Mantém o funcionamento offline, priorizando os arquivos da versão atual.
 self.addEventListener("fetch", (event) => {
   event.respondWith(
     caches.match(event.request).then((cachedResponse) => {
-      // Retorna a versao em cache se existir, caso contrario busca na rede de internet
       return cachedResponse || fetch(event.request).catch(() => {
-        // Caso a conexao falhe inteiramente, redireciona para a pagina inicial em cache
         if (event.request.mode === "navigate") {
           return caches.match("index.html");
         }
@@ -47,7 +49,3 @@ self.addEventListener("fetch", (event) => {
     })
   );
 });
-```
-eof
-
-Este arquivo é responsável por gerenciar todo o ciclo de vida offline do aplicativo do congresso, garantindo que a programação permaneça acessível aos participantes a qualquer momento.
